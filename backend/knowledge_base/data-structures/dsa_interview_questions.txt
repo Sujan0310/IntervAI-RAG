@@ -1,0 +1,348 @@
+DATA STRUCTURES & ALGORITHMS INTERVIEW QUESTIONS
+
+1. What is a data structure?
+A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. Different data structures are suited for different applications.
+
+2. What is an array?
+An array is a collection of elements stored at contiguous memory locations. Elements can be accessed using an index. Arrays have fixed size and provide O(1) access time but O(n) insertion/deletion time.
+
+3. What is a linked list?
+A linked list is a linear data structure where elements are stored in nodes. Each node contains data and a reference to the next node. Linked lists provide O(1) insertion/deletion but O(n) access time.
+
+4. Difference between array and linked list?
+Arrays: Fixed size, contiguous memory, O(1) access, O(n) insertion/deletion
+Linked Lists: Dynamic size, non-contiguous memory, O(n) access, O(1) insertion/deletion
+
+5. What is a stack?
+A stack is a Last-In-First-Out (LIFO) data structure. Elements are added and removed from the same end (top). Main operations: push (add), pop (remove), peek (view top). Used in function calls, undo operations, expression evaluation.
+
+6. What is a queue?
+A queue is a First-In-First-Out (FIFO) data structure. Elements are added at the rear and removed from the front. Main operations: enqueue (add), dequeue (remove), front (view first). Used in scheduling, breadth-first search.
+
+7. What is a binary tree?
+A binary tree is a hierarchical data structure where each node has at most two children (left and right). Root is the topmost node. Leaf nodes have no children. Used in searching, sorting, and hierarchical data representation.
+
+8. What is a binary search tree (BST)?
+A BST is a binary tree where left child < parent < right child. This property enables efficient searching, insertion, and deletion (O(log n) average case). In-order traversal gives sorted sequence.
+
+9. What is a hash table?
+A hash table stores key-value pairs using a hash function to compute an index. Provides O(1) average case for insertion, deletion, and lookup. Handles collisions using chaining or open addressing.
+
+10. Explain binary search algorithm.
+Binary search finds an element in a sorted array by repeatedly dividing the search interval in half. Compare target with middle element. If equal, return index. If less, search left half. If greater, search right half. Time complexity: O(log n).
+
+11. What is the time complexity of bubble sort?
+Best case: O(n) when array is already sorted
+Average case: O(n²)
+Worst case: O(n²) when array is reverse sorted
+Space complexity: O(1)
+
+12. What is merge sort?
+Merge sort is a divide-and-conquer algorithm that divides array into halves, recursively sorts them, and merges sorted halves. Time complexity: O(n log n) in all cases. Space complexity: O(n). Stable sort.
+
+13. What is quick sort?
+Quick sort selects a pivot element, partitions array around pivot (smaller left, larger right), and recursively sorts partitions. Average time: O(n log n). Worst case: O(n²). Space: O(log n). Not stable.
+
+14. What is dynamic programming?
+Dynamic programming solves complex problems by breaking them into simpler subproblems and storing results to avoid redundant calculations. Two approaches: top-down (memoization) and bottom-up (tabulation). Used in optimization problems.
+
+15. What is the difference between BFS and DFS?
+BFS (Breadth-First Search): Explores level by level using a queue. Finds shortest path. Space: O(w) where w is max width.
+DFS (Depth-First Search): Explores as deep as possible using a stack/recursion. Space: O(h) where h is height.
+
+16. What is a heap?
+A heap is a complete binary tree where parent is greater (max heap) or smaller (min heap) than children. Used in priority queues, heap sort. Operations: insert O(log n), extract-min/max O(log n), peek O(1).
+
+17. What is a graph?
+A graph is a collection of nodes (vertices) connected by edges. Can be directed or undirected, weighted or unweighted. Represented using adjacency matrix or adjacency list. Used in networks, social graphs, maps.
+
+18. What is Dijkstra's algorithm?
+Dijkstra's algorithm finds shortest path from source to all vertices in a weighted graph with non-negative weights. Uses priority queue. Time complexity: O((V+E) log V) with binary heap.
+
+19. What is a trie?
+A trie (prefix tree) is a tree-like data structure for storing strings. Each node represents a character. Used for autocomplete, spell checking, IP routing. Space: O(ALPHABET_SIZE * N * M) where N is number of words, M is average length.
+
+20. What is the difference between stack and heap memory?
+Stack: Stores local variables, function calls. Fixed size. LIFO. Fast access. Automatic deallocation.
+Heap: Stores dynamically allocated objects. Variable size. Manual deallocation. Slower access. Can cause fragmentation.
+
+21. What is a doubly linked list?
+A doubly linked list has nodes with references to both next and previous nodes. Allows bidirectional traversal. Easier deletion but uses more memory. Operations: O(1) insertion/deletion at known position, O(n) search.
+
+22. What is a circular linked list?
+A circular linked list has the last node pointing back to the first node, forming a circle. No null pointers. Useful for round-robin scheduling, circular buffers. Can be singly or doubly linked.
+
+23. Explain the concept of recursion.
+Recursion is when a function calls itself to solve smaller instances of the same problem. Requires base case (stopping condition) and recursive case. Uses call stack. Can be elegant but may cause stack overflow.
+
+24. What is tail recursion?
+Tail recursion is when recursive call is the last operation in the function. Can be optimized by compiler to iterative form, avoiding stack overflow. More memory efficient than regular recursion.
+
+25. What is memoization?
+Memoization stores results of expensive function calls and returns cached result when same inputs occur again. Top-down dynamic programming approach. Trades space for time. Used in Fibonacci, shortest path problems.
+
+26. Explain tabulation in dynamic programming.
+Tabulation is bottom-up dynamic programming where we build a table iteratively from base cases. Avoids recursion overhead. More space efficient as we can often optimize space. Preferred when all subproblems need solving.
+
+27. What is a priority queue?
+A priority queue is an abstract data type where each element has a priority. Elements with higher priority are dequeued first. Typically implemented using heaps. Operations: insert O(log n), extract-max/min O(log n).
+
+28. What is a deque?
+A deque (double-ended queue) allows insertion and deletion at both ends. Combines stack and queue functionality. Operations: O(1) for all insertions and deletions at ends. Used in sliding window problems.
+
+29. Explain AVL tree.
+AVL tree is a self-balancing BST where heights of left and right subtrees differ by at most 1. Maintains balance through rotations (single, double). Guarantees O(log n) for search, insert, delete. More rigidly balanced than red-black trees.
+
+30. What is a red-black tree?
+A red-black tree is a self-balancing BST with color property (red/black nodes). Less rigidly balanced than AVL but faster insertions/deletions. Used in Java TreeMap, C++ map. Guarantees O(log n) operations.
+
+31. What is a B-tree?
+A B-tree is a self-balancing tree optimized for disk access. Nodes can have multiple keys and children. All leaves at same level. Used in databases and file systems. Minimizes disk I/O operations.
+
+32. Explain segment tree.
+A segment tree is a binary tree for storing intervals or segments. Allows querying which segments contain a given point. Used for range queries (sum, min, max). Build: O(n), Query: O(log n), Update: O(log n).
+
+33. What is a Fenwick tree (Binary Indexed Tree)?
+A Fenwick tree efficiently calculates prefix sums and updates elements. More space efficient than segment tree. Operations: O(log n). Used for cumulative frequency tables, range sum queries.
+
+34. What is a disjoint set (Union-Find)?
+A disjoint set data structure tracks elements partitioned into non-overlapping sets. Operations: find (which set), union (merge sets). With path compression and union by rank: nearly O(1). Used in Kruskal's algorithm, network connectivity.
+
+35. Explain graph traversal algorithms.
+BFS: Uses queue, explores level by level, finds shortest path in unweighted graphs.
+DFS: Uses stack/recursion, explores depth first, detects cycles, topological sort.
+Both: O(V+E) time complexity.
+
+36. What is topological sorting?
+Topological sorting orders directed acyclic graph (DAG) vertices linearly such that for every edge u→v, u comes before v. Used in task scheduling, build systems. Algorithms: DFS-based, Kahn's algorithm (BFS-based).
+
+37. Explain Kruskal's algorithm.
+Kruskal's algorithm finds minimum spanning tree by sorting edges by weight and adding edges that don't form cycles. Uses disjoint set. Time: O(E log E). Greedy algorithm.
+
+38. What is Prim's algorithm?
+Prim's algorithm finds minimum spanning tree by starting from a vertex and greedily adding minimum weight edge connecting tree to non-tree vertex. Uses priority queue. Time: O(E log V). Greedy algorithm.
+
+39. Explain Bellman-Ford algorithm.
+Bellman-Ford finds shortest paths from source to all vertices, handling negative weights. Relaxes all edges V-1 times. Detects negative cycles. Time: O(VE). Slower than Dijkstra but more versatile.
+
+40. What is Floyd-Warshall algorithm?
+Floyd-Warshall finds shortest paths between all pairs of vertices. Uses dynamic programming. Handles negative weights but not negative cycles. Time: O(V³), Space: O(V²). Simple implementation.
+
+41. Explain A* search algorithm.
+A* is informed search algorithm using heuristic to guide search. f(n) = g(n) + h(n) where g is cost from start, h is heuristic to goal. Optimal if heuristic is admissible. Used in pathfinding, games.
+
+42. What is a suffix tree?
+A suffix tree stores all suffixes of a string in a compressed trie. Enables fast pattern matching, longest common substring, longest repeated substring. Build: O(n), Search: O(m) where m is pattern length.
+
+43. What is a suffix array?
+A suffix array is a sorted array of all suffixes of a string. More space efficient than suffix tree. Used for pattern matching, data compression. Build: O(n log n), Search: O(m log n).
+
+44. Explain KMP algorithm.
+KMP (Knuth-Morris-Pratt) is string matching algorithm that avoids re-examining previously matched characters. Uses failure function (LPS array). Time: O(n+m). No backtracking in text.
+
+45. What is Rabin-Karp algorithm?
+Rabin-Karp uses hashing for string matching. Computes hash of pattern and compares with hash of text substrings. Rolling hash enables O(1) hash updates. Average: O(n+m), Worst: O(nm).
+
+46. Explain Boyer-Moore algorithm.
+Boyer-Moore is efficient string matching algorithm that skips sections of text. Uses bad character and good suffix heuristics. Best case: O(n/m), Worst: O(nm). Often fastest in practice.
+
+47. What is a bloom filter?
+A bloom filter is a space-efficient probabilistic data structure for set membership testing. Can have false positives but no false negatives. Uses multiple hash functions. Used in caching, spell checkers.
+
+48. Explain skip list.
+A skip list is a probabilistic data structure with multiple levels of linked lists. Allows O(log n) search, insert, delete on average. Simpler than balanced trees. Used in Redis, LevelDB.
+
+49. What is a splay tree?
+A splay tree is a self-adjusting BST that moves accessed elements to root through rotations (splaying). Recently accessed elements near root. Amortized O(log n) operations. No balance information stored.
+
+50. What is a treap?
+A treap combines BST and heap properties. Each node has key (BST property) and priority (heap property). Randomized priorities ensure balance. Expected O(log n) operations. Simpler than AVL/red-black trees.
+
+51. Explain counting sort.
+Counting sort counts occurrences of each value and uses counts to place elements in sorted order. Time: O(n+k) where k is range. Space: O(k). Stable. Only works for integers in known range.
+
+52. What is radix sort?
+Radix sort sorts integers by processing digits from least to most significant (or vice versa). Uses stable sort (counting sort) for each digit. Time: O(d(n+k)) where d is digits. Space: O(n+k).
+
+53. Explain bucket sort.
+Bucket sort distributes elements into buckets, sorts each bucket, and concatenates results. Average: O(n+k), Worst: O(n²). Works well when input uniformly distributed. Used for floating-point numbers.
+
+54. What is heap sort?
+Heap sort builds a max heap and repeatedly extracts maximum element. Time: O(n log n) in all cases. Space: O(1). Not stable. In-place sorting algorithm.
+
+55. Explain shell sort.
+Shell sort is generalization of insertion sort that allows exchange of far apart elements. Uses gap sequence. Better than insertion sort for medium-sized arrays. Time: depends on gap sequence, typically O(n log² n).
+
+56. What is the master theorem?
+Master theorem provides asymptotic analysis for divide-and-conquer recurrences of form T(n) = aT(n/b) + f(n). Three cases based on comparison of f(n) and n^(log_b a). Simplifies complexity analysis.
+
+57. Explain amortized analysis.
+Amortized analysis averages time per operation over worst-case sequence of operations. Methods: aggregate, accounting, potential. Used when occasional expensive operations are offset by many cheap ones. Example: dynamic array resizing.
+
+58. What is space complexity?
+Space complexity measures memory used by algorithm as function of input size. Includes: input space, auxiliary space, recursion stack space. Expressed using Big O notation. Trade-off with time complexity.
+
+59. Explain Big O, Big Omega, Big Theta notation.
+Big O: Upper bound (worst case)
+Big Omega: Lower bound (best case)
+Big Theta: Tight bound (average case)
+Used to describe algorithm efficiency independent of hardware/implementation.
+
+60. What is the difference between O(n) and O(log n)?
+O(n): Linear time, processes each element once. Example: linear search.
+O(log n): Logarithmic time, halves problem size each step. Example: binary search.
+O(log n) is much faster for large n.
+
+61. Explain greedy algorithms.
+Greedy algorithms make locally optimal choice at each step hoping to find global optimum. Don't always give optimal solution. Examples: Dijkstra's, Huffman coding, activity selection. Fast but may not be optimal.
+
+62. What is backtracking?
+Backtracking tries all possible solutions by building candidates incrementally and abandoning candidates that fail constraints. Uses recursion. Examples: N-Queens, Sudoku solver, maze solving. Exponential time complexity.
+
+63. Explain branch and bound.
+Branch and bound systematically explores solution space by branching (dividing) and bounding (pruning unpromising branches). Uses best-first search. More efficient than backtracking. Used in optimization problems.
+
+64. What is divide and conquer?
+Divide and conquer breaks problem into smaller subproblems, solves them recursively, and combines solutions. Examples: merge sort, quick sort, binary search. Often leads to O(n log n) algorithms.
+
+65. Explain two-pointer technique.
+Two-pointer technique uses two pointers to traverse data structure. Pointers can move toward each other, same direction, or different speeds. Used in: pair sum, remove duplicates, palindrome check. Often O(n) time.
+
+66. What is sliding window technique?
+Sliding window maintains a window of elements and slides it across array/string. Fixed or variable size window. Used in: maximum sum subarray, longest substring problems. Typically O(n) time.
+
+67. Explain binary search variations.
+First occurrence: Find leftmost occurrence of target.
+Last occurrence: Find rightmost occurrence of target.
+Lower bound: First element >= target.
+Upper bound: First element > target.
+All use modified binary search.
+
+68. What is cycle detection in linked list?
+Floyd's cycle detection (tortoise and hare): Use two pointers moving at different speeds. If cycle exists, they meet. Time: O(n), Space: O(1). Also finds cycle start point.
+
+69. Explain LRU cache implementation.
+LRU (Least Recently Used) cache uses doubly linked list + hash map. Hash map for O(1) access, linked list for O(1) insertion/deletion. Most recent at head, least recent at tail. Get and Put: O(1).
+
+70. What is the knapsack problem?
+Knapsack problem: Given items with weights and values, maximize value without exceeding capacity. 0/1 knapsack: can't break items. Fractional knapsack: can take fractions. Solved using dynamic programming or greedy.
+
+71. Explain longest common subsequence (LCS).
+LCS finds longest subsequence common to two sequences. Subsequence maintains relative order but need not be contiguous. Solved using dynamic programming. Time: O(mn), Space: O(mn) or O(min(m,n)).
+
+72. What is longest increasing subsequence (LIS)?
+LIS finds longest subsequence where elements are in increasing order. Dynamic programming: O(n²). Binary search optimization: O(n log n). Used in patience sorting, box stacking.
+
+73. Explain edit distance problem.
+Edit distance (Levenshtein distance) finds minimum operations (insert, delete, replace) to convert one string to another. Solved using dynamic programming. Time: O(mn), Space: O(mn). Used in spell checkers, DNA analysis.
+
+74. What is matrix chain multiplication?
+Matrix chain multiplication finds optimal parenthesization to minimize scalar multiplications. Order matters for efficiency. Solved using dynamic programming. Time: O(n³), Space: O(n²).
+
+75. Explain coin change problem.
+Coin change: Given coin denominations, find minimum coins to make amount (or number of ways). Solved using dynamic programming. Unbounded knapsack variant. Time: O(n*amount).
+
+76. What is the traveling salesman problem?
+TSP finds shortest route visiting all cities exactly once and returning to start. NP-hard problem. Exact solutions: dynamic programming O(n²2ⁿ), brute force O(n!). Approximations: nearest neighbor, genetic algorithms.
+
+77. Explain N-Queens problem.
+N-Queens places N queens on N×N chessboard so no two queens attack each other. Solved using backtracking. Checks row, column, diagonals. Time: O(N!). Classic constraint satisfaction problem.
+
+78. What is Sudoku solver algorithm?
+Sudoku solver uses backtracking. Try digits 1-9 in empty cell, check constraints (row, column, 3×3 box), recurse. Backtrack if no valid digit. Optimizations: constraint propagation, naked singles.
+
+79. Explain graph coloring problem.
+Graph coloring assigns colors to vertices so adjacent vertices have different colors. Chromatic number: minimum colors needed. NP-complete for general graphs. Used in register allocation, scheduling.
+
+80. What is Hamiltonian path/cycle?
+Hamiltonian path visits each vertex exactly once. Hamiltonian cycle is Hamiltonian path that returns to start. NP-complete problem. Solved using backtracking or dynamic programming.
+
+81. Explain strongly connected components.
+Strongly connected component (SCC) is maximal set of vertices where every vertex is reachable from every other. Algorithms: Kosaraju's (two DFS), Tarjan's (one DFS). Time: O(V+E). Used in compiler optimization.
+
+82. What is articulation point?
+Articulation point (cut vertex) is a vertex whose removal increases number of connected components. Found using DFS with discovery and low times. Used in network reliability analysis.
+
+83. Explain bridge in graph.
+Bridge (cut edge) is an edge whose removal increases number of connected components. Found using DFS similar to articulation points. Critical in network design.
+
+84. What is Eulerian path/circuit?
+Eulerian path visits every edge exactly once. Eulerian circuit is Eulerian path that returns to start. Exists if graph has 0 or 2 odd-degree vertices. Hierholzer's algorithm finds it. Time: O(E).
+
+85. Explain bipartite graph.
+Bipartite graph has vertices divided into two sets where edges only connect vertices from different sets. Check using BFS/DFS with 2-coloring. Used in matching problems, scheduling.
+
+86. What is maximum flow problem?
+Maximum flow finds maximum flow from source to sink in flow network. Ford-Fulkerson algorithm uses augmenting paths. Edmonds-Karp (BFS-based): O(VE²). Used in network routing, bipartite matching.
+
+87. Explain minimum cut problem.
+Minimum cut partitions graph into two sets minimizing total edge weight between sets. By max-flow min-cut theorem, equals maximum flow. Used in image segmentation, network reliability.
+
+88. What is Hungarian algorithm?
+Hungarian algorithm solves assignment problem (minimum cost bipartite matching). Time: O(n³). Used in task assignment, resource allocation. Based on augmenting paths in equality graph.
+
+89. Explain stable matching problem.
+Stable matching pairs elements from two sets with no unstable pairs (both prefer each other over current partners). Gale-Shapley algorithm finds stable matching. Time: O(n²). Used in college admissions, job matching.
+
+90. What is convex hull?
+Convex hull is smallest convex polygon containing all points. Algorithms: Graham scan O(n log n), Jarvis march O(nh), QuickHull O(n log n) average. Used in computer graphics, pattern recognition.
+
+91. Explain line sweep algorithm.
+Line sweep processes geometric objects by sweeping line across plane. Maintains data structure of active objects. Used in: closest pair, line segment intersection. Often O(n log n).
+
+92. What is range minimum query (RMQ)?
+RMQ finds minimum element in array subrange. Preprocessing: O(n log n) using sparse table or O(n) using Cartesian tree. Query: O(1). Used in LCA, string algorithms.
+
+93. Explain lowest common ancestor (LCA).
+LCA finds lowest common ancestor of two nodes in tree. Methods: binary lifting O(log n), Euler tour + RMQ O(1), Tarjan's offline algorithm. Used in tree queries, network routing.
+
+94. What is heavy-light decomposition?
+Heavy-light decomposition partitions tree into heavy and light edges. Enables O(log² n) path queries using segment trees. Used in tree path queries, dynamic tree problems.
+
+95. Explain centroid decomposition.
+Centroid decomposition recursively decomposes tree using centroids. Creates decomposition tree of height O(log n). Used in tree distance queries, path counting problems.
+
+96. What is persistent data structure?
+Persistent data structure preserves previous versions after modifications. Fully persistent: all versions accessible. Partially persistent: only latest modifiable. Used in functional programming, version control.
+
+97. Explain rope data structure.
+Rope is a tree-based string data structure for efficient operations on large strings. Leaves contain string chunks. Operations: concatenation O(1), split O(log n), insert/delete O(log n). Used in text editors.
+
+98. What is van Emde Boas tree?
+van Emde Boas tree supports operations in O(log log u) time where u is universe size. Recursive structure. Space: O(u). Used when universe is small and operations need to be very fast.
+
+99. Explain Y-fast trie.
+Y-fast trie combines x-fast trie with balanced BSTs. Operations: O(log log u) expected time. Space: O(n). More space efficient than x-fast trie. Used for integer sets with fast operations.
+
+100. What is a k-d tree?
+K-d tree is a space-partitioning tree for organizing points in k-dimensional space. Used for nearest neighbor search, range search. Build: O(n log n), Search: O(log n) average. Used in computer graphics, machine learning.
+
+101. Explain quadtree.
+Quadtree recursively subdivides 2D space into four quadrants. Used for spatial indexing, image compression, collision detection. Each node has four children. Efficient for sparse data.
+
+102. What is an octree?
+Octree is 3D version of quadtree, subdividing space into eight octants. Used in 3D graphics, spatial indexing, voxel representation. Efficient for 3D collision detection and rendering.
+
+103. Explain R-tree.
+R-tree is a tree data structure for indexing spatial data. Nodes contain bounding boxes. Used in geographic information systems, spatial databases. Supports efficient range queries and nearest neighbor search.
+
+104. What is a Merkle tree?
+Merkle tree (hash tree) is a tree where each leaf is hash of data block and each non-leaf is hash of its children. Used in blockchain, distributed systems, file verification. Enables efficient verification.
+
+105. Explain Fibonacci heap.
+Fibonacci heap is a heap with better amortized time bounds. Decrease-key: O(1), Delete: O(log n). Used in Dijkstra's and Prim's algorithms for better performance. More complex than binary heap.
+
+106. What is a binomial heap?
+Binomial heap is a collection of binomial trees. Supports merge in O(log n). All operations: O(log n). Used when frequent merging is needed. Simpler than Fibonacci heap.
+
+107. Explain pairing heap.
+Pairing heap is a simplified Fibonacci heap. Decrease-key: O(log n) amortized. Simpler implementation. Good practical performance. Used as priority queue in algorithms.
+
+108. What is a leftist heap?
+Leftist heap is a binary heap variant optimized for merging. Maintains leftist property: null path length of left child >= right child. Merge: O(log n). Used when frequent merging needed.
+
+109. Explain skew heap.
+Skew heap is self-adjusting leftist heap. No balance information stored. Merge: O(log n) amortized. Simpler than leftist heap. Good practical performance for priority queue operations.
+
+110. What is a Cartesian tree?
+Cartesian tree is a binary tree derived from sequence. Satisfies heap property and in-order traversal gives original sequence. Used in range minimum query, treap construction. Build: O(n) using stack.

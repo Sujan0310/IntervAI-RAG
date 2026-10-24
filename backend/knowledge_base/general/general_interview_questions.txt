@@ -1,0 +1,375 @@
+GENERAL INTERVIEW QUESTIONS
+===========================
+
+SECTION 1: BEHAVIORAL & SOFT SKILLS
+------------------------------------
+
+Q1: Tell me about yourself.
+A: Professional summary focusing on relevant experience, skills, and achievements. Structure: current role, key accomplishments, relevant background, career goals. Keep it concise (2-3 minutes), tailored to position.
+
+Q2: Why do you want to work here?
+A: Research company values, culture, products. Connect personal goals with company mission. Mention specific projects, technologies, or initiatives that excite you. Show genuine interest and cultural fit.
+
+Q3: What are your strengths?
+A: Choose 2-3 relevant strengths with specific examples. Technical skills, problem-solving, communication, leadership, adaptability. Use STAR method (Situation, Task, Action, Result) for examples.
+
+Q4: What are your weaknesses?
+A: Choose genuine weakness that's not critical for role. Show self-awareness and improvement efforts. Example: "Public speaking - taking courses and volunteering for presentations to improve."
+
+Q5: Describe a challenging project you worked on.
+A: Use STAR method. Explain technical challenges, your approach, obstacles overcome, team collaboration, final outcome, lessons learned. Quantify impact when possible.
+
+Q6: How do you handle conflict in a team?
+A: Active listening, understanding perspectives, finding common ground, focusing on solutions not blame, escalating when necessary. Give specific example of conflict resolution.
+
+Q7: Where do you see yourself in 5 years?
+A: Show ambition aligned with company growth. Mention skill development, leadership opportunities, technical expertise. Avoid: "your job" or unrealistic goals. Focus on growth within organization.
+
+Q8: Why are you leaving your current job?
+A: Stay positive, focus on growth opportunities, new challenges, better alignment with career goals. Never badmouth previous employer. Emphasize what you're moving toward, not away from.
+
+Q9: Describe your ideal work environment.
+A: Collaborative, learning-focused, innovative, supportive. Mention specific aspects: agile methodology, code reviews, mentorship, work-life balance. Align with company culture.
+
+Q10: How do you stay updated with technology?
+A: Reading blogs, following industry leaders, online courses, conferences, side projects, open source contributions, tech communities, podcasts, documentation. Show continuous learning mindset.
+
+
+SECTION 2: PROBLEM-SOLVING & CRITICAL THINKING
+-----------------------------------------------
+
+Q11: How do you approach a problem you've never seen before?
+A: Break down problem, research similar solutions, consult documentation, ask questions, prototype solutions, test hypotheses, iterate. Emphasize systematic approach and resourcefulness.
+
+Q12: Describe a time you made a mistake. How did you handle it?
+A: Own the mistake, explain context, immediate actions taken, communication with stakeholders, lessons learned, preventive measures implemented. Show accountability and growth.
+
+Q13: How do you prioritize tasks when everything is urgent?
+A: Assess impact and urgency, communicate with stakeholders, negotiate deadlines, break down tasks, delegate when possible, focus on high-impact items. Use frameworks like Eisenhower Matrix.
+
+Q14: Tell me about a time you had to learn something quickly.
+A: Specific example with timeline, learning resources used, application of knowledge, outcome. Show adaptability and learning agility. Mention any challenges overcome.
+
+Q15: How do you handle ambiguous requirements?
+A: Ask clarifying questions, document assumptions, create prototypes for feedback, iterative development, regular stakeholder communication, risk assessment. Show proactive communication.
+
+Q16: Describe a time you disagreed with a technical decision.
+A: Present your perspective with data, listen to others, evaluate tradeoffs, reach consensus or defer to expertise, support final decision. Show collaboration and professionalism.
+
+Q17: How do you ensure code quality?
+A: Code reviews, unit testing, integration testing, static analysis, following style guides, documentation, refactoring, continuous integration, pair programming. Mention specific tools and practices.
+
+Q18: What's your approach to debugging?
+A: Reproduce issue, isolate problem, form hypothesis, test systematically, use debugging tools, check logs, review recent changes, consult documentation, ask for help when stuck.
+
+Q19: How do you handle technical debt?
+A: Identify and document debt, assess impact, prioritize based on risk and cost, allocate time for refactoring, balance with new features, prevent accumulation through good practices.
+
+Q20: Describe your code review process.
+A: Check functionality, readability, maintainability, performance, security, test coverage. Provide constructive feedback, ask questions, suggest improvements, learn from others' code.
+
+
+SECTION 3: TEAMWORK & COLLABORATION
+------------------------------------
+
+Q21: How do you handle working with difficult team members?
+A: Professional communication, understanding their perspective, finding common ground, focusing on work goals, involving manager if needed. Give specific example.
+
+Q22: Describe a successful team project.
+A: Your role, team dynamics, collaboration methods, challenges overcome, final outcome, what made it successful. Emphasize teamwork and communication.
+
+Q23: How do you mentor junior developers?
+A: Pair programming, code reviews with explanations, sharing resources, encouraging questions, providing constructive feedback, setting achievable goals, being patient and supportive.
+
+Q24: How do you handle remote work challenges?
+A: Clear communication, regular check-ins, using collaboration tools, setting boundaries, maintaining work-life balance, building relationships virtually, being proactive.
+
+Q25: Describe your experience with agile methodologies.
+A: Specific frameworks used (Scrum, Kanban), ceremonies participated in, role in team, benefits observed, challenges faced, continuous improvement practices.
+
+Q26: How do you give and receive feedback?
+A: Giving: specific, timely, constructive, actionable. Receiving: listen actively, ask clarifying questions, reflect, implement improvements, show appreciation. Growth mindset.
+
+Q27: Tell me about a time you led a project.
+A: Project scope, team size, your leadership approach, delegation, decision-making, stakeholder management, challenges, outcome, lessons learned.
+
+Q28: How do you handle disagreements about technical approaches?
+A: Present data and reasoning, listen to alternatives, evaluate pros/cons, prototype if needed, reach consensus, document decision, support team decision.
+
+Q29: Describe your experience with cross-functional teams.
+A: Working with designers, product managers, QA, DevOps. Communication strategies, understanding different perspectives, aligning goals, resolving conflicts.
+
+Q30: How do you build trust in a new team?
+A: Deliver on commitments, communicate transparently, admit mistakes, help others, share knowledge, be reliable, show respect, participate actively.
+
+
+SECTION 4: TECHNICAL COMMUNICATION
+-----------------------------------
+
+Q31: How do you explain technical concepts to non-technical stakeholders?
+A: Use analogies, avoid jargon, focus on business impact, visual aids, check understanding, tailor to audience, provide examples, be patient.
+
+Q32: Describe your documentation practices.
+A: README files, API documentation, code comments, architecture diagrams, decision records, runbooks, keeping docs updated, using tools like Swagger, JSDoc.
+
+Q33: How do you present technical proposals?
+A: Problem statement, proposed solution, alternatives considered, pros/cons, implementation plan, risks, timeline, cost. Use visuals, anticipate questions.
+
+Q34: Tell me about a time you had to convince others of your idea.
+A: Prepared data and examples, addressed concerns, listened to feedback, adapted approach, built consensus, implemented solution, measured success.
+
+Q35: How do you handle technical discussions in meetings?
+A: Come prepared, listen actively, contribute constructively, ask clarifying questions, respect others' opinions, focus on solutions, follow up with action items.
+
+Q36: Describe your experience with technical writing.
+A: Blog posts, documentation, proposals, reports. Audience consideration, clarity, structure, examples, revision process, tools used.
+
+Q37: How do you communicate project status?
+A: Regular updates, clear metrics, highlight blockers, celebrate wins, be transparent about challenges, use dashboards, tailor communication to audience.
+
+Q38: Tell me about presenting to executives.
+A: Focus on business value, high-level overview, key metrics, risks and mitigation, clear recommendations, anticipate questions, respect their time.
+
+Q39: How do you handle technical questions you can't answer?
+A: Admit you don't know, offer to research and follow up, suggest resources, ask clarifying questions, learn from the experience.
+
+Q40: Describe your experience with knowledge sharing.
+A: Tech talks, documentation, mentoring, code reviews, lunch and learns, internal wikis, pair programming, creating tutorials.
+
+
+SECTION 5: PROJECT MANAGEMENT & DELIVERY
+-----------------------------------------
+
+Q41: How do you estimate project timelines?
+A: Break down tasks, consider complexity and unknowns, account for testing and reviews, buffer for unexpected issues, consult team, use historical data, communicate assumptions.
+
+Q42: Describe your experience with sprint planning.
+A: Story estimation, capacity planning, prioritization, breaking down user stories, identifying dependencies, setting sprint goals, team collaboration.
+
+Q43: How do you handle changing requirements?
+A: Assess impact, communicate with stakeholders, re-prioritize, update estimates, document changes, maintain flexibility, use agile practices.
+
+Q44: Tell me about a project that didn't go as planned.
+A: What went wrong, how you identified issues, corrective actions taken, communication with stakeholders, lessons learned, preventive measures for future.
+
+Q45: How do you ensure projects stay on track?
+A: Regular check-ins, tracking progress, identifying blockers early, clear communication, adjusting plans when needed, stakeholder updates, risk management.
+
+Q46: Describe your experience with release management.
+A: Release planning, versioning, deployment strategies, rollback procedures, communication, monitoring, post-release support, documentation.
+
+Q47: How do you handle scope creep?
+A: Clear requirements documentation, change request process, impact assessment, stakeholder communication, prioritization, saying no when appropriate.
+
+Q48: Tell me about managing technical dependencies.
+A: Identifying dependencies early, coordinating with other teams, tracking progress, having contingency plans, clear communication, documentation.
+
+Q49: How do you measure project success?
+A: Meeting requirements, timeline adherence, budget, quality metrics, user satisfaction, business impact, team morale, lessons learned.
+
+Q50: Describe your experience with stakeholder management.
+A: Regular communication, managing expectations, gathering requirements, providing updates, addressing concerns, building relationships, transparency.
+
+
+SECTION 6: CAREER DEVELOPMENT & GROWTH
+---------------------------------------
+
+Q51: What motivates you in your work?
+A: Solving challenging problems, learning new technologies, making impact, collaborating with talented people, seeing projects succeed, user satisfaction.
+
+Q52: How do you handle failure?
+A: Analyze what went wrong, take responsibility, learn lessons, implement improvements, move forward, share learnings with team.
+
+Q53: What's your approach to learning new technologies?
+A: Online courses, documentation, tutorials, side projects, experimentation, community resources, mentorship, hands-on practice.
+
+Q54: Describe a time you went above and beyond.
+A: Specific situation, extra effort made, impact on project/team, recognition received, personal satisfaction, lessons learned.
+
+Q55: How do you balance technical depth vs breadth?
+A: Deep expertise in core areas, broad awareness of related technologies, continuous learning, knowing when to specialize vs generalize, T-shaped skills.
+
+Q56: What are your career goals?
+A: Short-term and long-term goals, skill development plans, leadership aspirations, technical expertise, alignment with company opportunities.
+
+Q57: How do you handle burnout?
+A: Recognize signs early, maintain work-life balance, take breaks, delegate, communicate with manager, pursue interests outside work, seek support.
+
+Q58: Describe your ideal manager.
+A: Supportive, clear communicator, provides feedback, trusts team, removes blockers, advocates for team, technical understanding, growth-focused.
+
+Q59: What makes you a good fit for this role?
+A: Relevant skills and experience, cultural alignment, enthusiasm for company mission, specific contributions you can make, growth potential.
+
+Q60: How do you contribute to company culture?
+A: Positive attitude, collaboration, knowledge sharing, mentoring, participating in initiatives, supporting teammates, embodying values.
+
+
+SECTION 7: TECHNICAL DECISION MAKING
+-------------------------------------
+
+Q61: How do you evaluate new technologies?
+A: Assess business need, evaluate maturity and community support, consider learning curve, test with POC, analyze costs and benefits, check compatibility.
+
+Q62: Describe a time you chose between competing solutions.
+A: Options considered, evaluation criteria, pros/cons analysis, stakeholder input, decision rationale, implementation, outcome validation.
+
+Q63: How do you handle technical tradeoffs?
+A: Identify constraints, evaluate options, consider short and long-term impacts, consult team, document decision, be willing to revisit.
+
+Q64: Tell me about architecting a system from scratch.
+A: Requirements gathering, technology selection, design patterns, scalability considerations, security, documentation, iterative refinement.
+
+Q65: How do you approach refactoring legacy code?
+A: Understand existing functionality, add tests, incremental changes, maintain backwards compatibility, document changes, communicate with team.
+
+Q66: Describe your experience with technical debt decisions.
+A: When to take on debt, documenting debt, prioritizing paydown, balancing with features, communicating impact to stakeholders.
+
+Q67: How do you ensure scalability in your designs?
+A: Load testing, horizontal scaling, caching, database optimization, asynchronous processing, monitoring, capacity planning.
+
+Q68: Tell me about a time you had to make a quick technical decision.
+A: Situation urgency, information available, decision process, risk assessment, implementation, outcome, lessons learned.
+
+Q69: How do you approach security in development?
+A: Secure coding practices, input validation, authentication/authorization, encryption, regular updates, security testing, following OWASP guidelines.
+
+Q70: Describe your experience with performance optimization.
+A: Profiling, identifying bottlenecks, optimization strategies, measuring improvements, balancing optimization with maintainability.
+
+
+SECTION 8: INDUSTRY AWARENESS
+------------------------------
+
+Q71: What trends are you excited about in technology?
+A: AI/ML, cloud-native, serverless, edge computing, WebAssembly, quantum computing. Explain why and potential impact.
+
+Q72: How do you see the role of AI in software development?
+A: Code assistance, testing, documentation, code review, but human oversight essential. Opportunities and challenges.
+
+Q73: What's your opinion on remote work?
+A: Benefits (flexibility, productivity), challenges (communication, collaboration), best practices, hybrid models, tools and processes.
+
+Q74: How do you think about open source?
+A: Benefits to community, learning opportunities, contribution experiences, licensing considerations, using vs contributing.
+
+Q75: What's your view on technical certifications?
+A: Value for learning and credibility, but practical experience more important. Specific certifications pursued and why.
+
+Q76: How do you see the future of web development?
+A: Progressive web apps, WebAssembly, JAMstack, serverless, improved tooling, performance focus, accessibility.
+
+Q77: What's your opinion on microservices?
+A: Benefits (scalability, independence), challenges (complexity, distributed systems), when appropriate, alternatives.
+
+Q78: How do you think about technical leadership?
+A: Mentoring, technical direction, decision-making, communication, balancing coding with leadership, growing others.
+
+Q79: What's your view on work-life balance in tech?
+A: Importance for sustainability, setting boundaries, company culture, managing expectations, personal strategies.
+
+Q80: How do you see the role of testing evolving?
+A: Shift-left testing, AI-assisted testing, test automation, continuous testing, quality culture, TDD/BDD practices.
+
+
+SECTION 9: COMPANY & ROLE SPECIFIC
+-----------------------------------
+
+Q81: What do you know about our company?
+A: Products/services, mission, recent news, culture, technology stack, market position, growth trajectory. Show research and genuine interest.
+
+Q82: Why should we hire you?
+A: Unique combination of skills, relevant experience, cultural fit, enthusiasm, specific value you bring, examples of past success.
+
+Q83: What questions do you have for us?
+A: Team structure, tech stack, development process, growth opportunities, challenges, company culture, next steps. Shows engagement.
+
+Q84: How would you contribute to our team?
+A: Specific skills, experience with similar problems, collaboration style, learning mindset, examples of past contributions.
+
+Q85: What interests you about this role?
+A: Specific responsibilities, technologies, team, company mission, growth opportunities, challenges. Connect to career goals.
+
+Q86: How do you align with our company values?
+A: Research values, provide specific examples of demonstrating similar values, explain why they resonate with you.
+
+Q87: What do you think are our biggest challenges?
+A: Industry challenges, competitive landscape, technical challenges, growth challenges. Show understanding of business context.
+
+Q88: How would you approach your first 30/60/90 days?
+A: Learning phase, relationship building, quick wins, understanding codebase, contributing to team, setting goals.
+
+Q89: What concerns do you have about this role?
+A: Thoughtful concerns showing you've considered the role deeply. Frame positively, show willingness to address.
+
+Q90: How do you handle the pace of change in our industry?
+A: Continuous learning, adaptability, staying informed, embracing change, helping others adapt, specific examples.
+
+
+SECTION 10: SITUATIONAL & SCENARIO-BASED
+-----------------------------------------
+
+Q91: You discover a critical bug in production. What do you do?
+A: Assess severity, immediate mitigation, communicate to stakeholders, investigate root cause, implement fix, test thoroughly, deploy, post-mortem.
+
+Q92: A teammate consistently misses deadlines. How do you handle it?
+A: Private conversation, understand blockers, offer help, communicate impact, involve manager if needed, focus on solutions.
+
+Q93: You're asked to work on a project using unfamiliar technology. How do you proceed?
+A: Research technology, assess learning curve, create learning plan, start with small tasks, ask for help, document learnings.
+
+Q94: You disagree with your manager's technical decision. What do you do?
+A: Present concerns with data, listen to reasoning, understand constraints, suggest alternatives, support final decision, escalate if ethical/critical.
+
+Q95: Multiple stakeholders have conflicting priorities. How do you handle it?
+A: Facilitate discussion, clarify business goals, assess impact, propose prioritization, escalate to decision-maker if needed, communicate decision.
+
+Q96: You're behind schedule on a project. What do you do?
+A: Assess remaining work, identify critical path, communicate early, propose solutions (scope reduction, help, timeline adjustment), increase focus.
+
+Q97: A client requests a feature that's technically problematic. How do you respond?
+A: Understand business need, explain technical concerns, propose alternatives, discuss tradeoffs, find compromise, document decision.
+
+Q98: You find a security vulnerability in your code. What do you do?
+A: Assess severity, fix immediately, test thoroughly, review similar code, communicate to team, document, implement preventive measures.
+
+Q99: Your team is resistant to a new process you're introducing. How do you handle it?
+A: Listen to concerns, explain benefits, address objections, pilot with volunteers, gather feedback, iterate, show results.
+
+Q100: You're asked to estimate a project with many unknowns. How do you approach it?
+A: Break down known components, identify unknowns, research similar projects, provide range estimates, communicate assumptions and risks, plan for iteration.
+
+
+SECTION 11: ETHICS & PROFESSIONALISM
+-------------------------------------
+
+Q101: How do you handle confidential information?
+A: Respect NDAs, secure storage, need-to-know basis, proper disposal, awareness of regulations, company policies.
+
+Q102: Describe a time you had to make an ethical decision.
+A: Situation, ethical considerations, decision process, action taken, outcome, principles applied.
+
+Q103: How do you handle pressure to cut corners?
+A: Explain risks, propose alternatives, communicate long-term impact, stand firm on critical issues, escalate if needed.
+
+Q104: What would you do if asked to do something unethical?
+A: Refuse politely, explain concerns, suggest alternatives, escalate to management/HR, document, consider leaving if necessary.
+
+Q105: How do you ensure diversity and inclusion in your work?
+A: Inclusive language, diverse perspectives in decisions, mentoring underrepresented groups, challenging bias, creating welcoming environment.
+
+Q106: Describe your approach to intellectual property.
+A: Respect copyrights and licenses, proper attribution, company IP policies, open source licensing, avoiding conflicts of interest.
+
+Q107: How do you handle mistakes that affect others?
+A: Take responsibility, communicate immediately, apologize, fix issue, make amends, learn and prevent recurrence.
+
+Q108: What's your approach to professional development?
+A: Continuous learning, certifications, conferences, networking, reading, side projects, mentorship, staying current.
+
+Q109: How do you maintain professionalism under stress?
+A: Stay calm, focus on solutions, communicate clearly, take breaks when needed, seek support, maintain perspective.
+
+Q110: Describe your approach to giving credit for work.
+A: Acknowledge contributions, share success, be specific, public recognition, avoid taking undue credit, build team morale.

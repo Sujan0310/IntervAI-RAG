@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: interview-rag-db
+    environment:
+      POSTGRES_USER: raguser
+      POSTGRES_PASSWORD: ragpassword
+      POSTGRES_DB: interview_rag
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U raguser"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: interview-rag-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://raguser:ragpassword@postgres:5432/interview_rag
+      - LLM_TYPE=lmstudio
+      - LMSTUDIO_BASE_URL=http://host.docker.internal:1234
+      - LMSTUDIO_MODEL=qwen2.5-coder-14b-instruct:2
+      - LMSTUDIO_API_KEY=not-needed
+      - EMBEDDING_TYPE=local
+      - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      - STRICT_RAG_MODE=true
+      - ENVIRONMENT=production
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/app:/app/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: interview-rag-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: interview-rag-network

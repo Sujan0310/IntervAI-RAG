@@ -1,0 +1,357 @@
+WEB DEVELOPMENT INTERVIEW QUESTIONS
+
+1. What is HTML?
+HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of web pages using elements and tags. HTML5 is the latest version with new semantic elements, APIs, and multimedia support.
+
+2. What is CSS?
+CSS (Cascading Style Sheets) is used to style and layout web pages. It controls colors, fonts, spacing, positioning, and responsive design. CSS3 added animations, transitions, flexbox, and grid layout.
+
+3. What is JavaScript?
+JavaScript is a high-level, interpreted programming language used to create interactive web pages. It runs in the browser and can manipulate the DOM, handle events, make API calls, and create dynamic content.
+
+4. What is the DOM?
+DOM (Document Object Model) is a programming interface for HTML documents. It represents the page as a tree structure where each node is an object representing part of the document. JavaScript can manipulate the DOM to change content, structure, and style.
+
+5. What is the difference between var, let, and const?
+var: Function-scoped, hoisted, can be redeclared
+let: Block-scoped, not hoisted, cannot be redeclared
+const: Block-scoped, not hoisted, cannot be reassigned (but objects can be mutated)
+
+6. What is a closure in JavaScript?
+A closure is a function that has access to variables in its outer (enclosing) function's scope, even after the outer function has returned. Closures are created every time a function is created.
+
+7. What is the event loop?
+The event loop is JavaScript's concurrency model. It continuously checks the call stack and callback queue. When the stack is empty, it moves callbacks from the queue to the stack for execution. This enables asynchronous programming.
+
+8. What is a Promise?
+A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, rejected. Promises can be chained using .then() and .catch().
+
+9. What is async/await?
+async/await is syntactic sugar for Promises. async functions return a Promise. await pauses execution until the Promise resolves. Makes asynchronous code look synchronous and easier to read.
+
+10. What is React?
+React is a JavaScript library for building user interfaces. It uses a component-based architecture, virtual DOM for efficient updates, and unidirectional data flow. React enables building reusable UI components.
+
+11. What are React Hooks?
+Hooks are functions that let you use state and lifecycle features in functional components. Common hooks: useState (state management), useEffect (side effects), useContext (context API), useMemo (memoization), useCallback (callback memoization).
+
+12. What is the virtual DOM?
+The virtual DOM is a lightweight copy of the actual DOM. React creates a virtual DOM, compares it with the previous version (diffing), and updates only the changed parts in the real DOM (reconciliation). This improves performance.
+
+13. What is Redux?
+Redux is a state management library for JavaScript apps. It maintains application state in a single store. State is read-only and changed through actions and reducers. Provides predictable state management and time-travel debugging.
+
+14. What is REST API?
+REST (Representational State Transfer) is an architectural style for web services. RESTful APIs use HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations. Resources are identified by URLs. Stateless communication.
+
+15. What is Node.js?
+Node.js is a JavaScript runtime built on Chrome's V8 engine. It enables server-side JavaScript execution. Features: event-driven, non-blocking I/O, single-threaded with event loop. Used for building scalable network applications.
+
+16. What is Express.js?
+Express is a minimal and flexible Node.js web application framework. It provides features for web and mobile applications: routing, middleware, template engines, error handling. Simplifies building RESTful APIs.
+
+17. What is middleware in Express?
+Middleware functions have access to request, response, and next function. They can execute code, modify request/response, end request-response cycle, or call next middleware. Used for logging, authentication, parsing, error handling.
+
+18. What is CORS?
+CORS (Cross-Origin Resource Sharing) is a security feature that restricts web pages from making requests to a different domain. Browsers enforce same-origin policy. CORS headers allow controlled access to resources from different origins.
+
+19. What is JWT?
+JWT (JSON Web Token) is a compact, URL-safe token for authentication. Contains header, payload, and signature. Used for stateless authentication. Server verifies signature without storing session data.
+
+20. What is responsive design?
+Responsive design makes web pages render well on different devices and screen sizes. Uses flexible layouts, media queries, flexible images, and viewport meta tag. Mobile-first approach is recommended.
+
+21. What is the difference between localStorage and sessionStorage?
+localStorage: Persists data with no expiration, accessible across browser tabs/windows
+sessionStorage: Data cleared when page session ends, accessible only in same tab
+Both store data as key-value pairs in the browser.
+
+22. What is webpack?
+Webpack is a module bundler for JavaScript applications. It bundles JavaScript files, CSS, images, and other assets. Features: code splitting, lazy loading, tree shaking, hot module replacement. Optimizes application for production.
+
+23. What is TypeScript?
+TypeScript is a superset of JavaScript that adds static typing. Provides type checking at compile time, better IDE support, interfaces, generics, and decorators. Compiles to JavaScript.
+
+24. What is GraphQL?
+GraphQL is a query language for APIs. Clients specify exactly what data they need. Single endpoint returns requested data. Reduces over-fetching and under-fetching. Strongly typed schema.
+
+25. What is the difference between SQL and NoSQL?
+SQL: Relational, structured schema, ACID transactions, vertical scaling (MySQL, PostgreSQL)
+NoSQL: Non-relational, flexible schema, eventual consistency, horizontal scaling (MongoDB, Redis, Cassandra)
+
+26. What is semantic HTML?
+Semantic HTML uses meaningful tags that describe content purpose (header, nav, article, section, footer). Improves accessibility, SEO, and code readability. Screen readers and search engines better understand page structure.
+
+27. What is the box model in CSS?
+The box model describes how elements are rendered. Components: content, padding, border, margin. box-sizing: border-box includes padding and border in width/height. Understanding box model is crucial for layout.
+
+28. What is Flexbox?
+Flexbox is a CSS layout model for arranging items in rows or columns. Properties: flex-direction, justify-content, align-items, flex-wrap. Simplifies responsive layouts, vertical centering, and equal-height columns.
+
+29. What is CSS Grid?
+CSS Grid is a 2D layout system for creating complex layouts. Define rows and columns, place items in grid cells. Properties: grid-template-columns, grid-template-rows, grid-gap, grid-area. More powerful than Flexbox for 2D layouts.
+
+30. What is the difference between display: none and visibility: hidden?
+display: none removes element from layout, doesn't take space, not accessible to screen readers.
+visibility: hidden hides element but reserves space, still in layout, accessible to screen readers.
+
+31. What is specificity in CSS?
+Specificity determines which CSS rule applies when multiple rules target same element. Hierarchy: inline styles > IDs > classes/attributes/pseudo-classes > elements/pseudo-elements. !important overrides specificity.
+
+32. What are CSS preprocessors?
+CSS preprocessors (Sass, Less, Stylus) extend CSS with variables, nesting, mixins, functions, and imports. Compile to standard CSS. Improve code organization, reusability, and maintainability.
+
+33. What is BEM methodology?
+BEM (Block Element Modifier) is a CSS naming convention. Block: standalone component, Element: part of block, Modifier: variation of block/element. Example: .card__title--large. Improves code clarity and prevents naming conflicts.
+
+34. What is critical CSS?
+Critical CSS is the minimum CSS needed to render above-the-fold content. Inlined in HTML head for faster initial render. Remaining CSS loaded asynchronously. Improves perceived performance and Core Web Vitals.
+
+35. What is the difference between == and === in JavaScript?
+== (loose equality): Performs type coercion before comparison. "5" == 5 is true.
+=== (strict equality): No type coercion, checks type and value. "5" === 5 is false.
+Always prefer === to avoid unexpected behavior.
+
+36. What is hoisting in JavaScript?
+Hoisting moves variable and function declarations to top of scope during compilation. var declarations are hoisted (initialized as undefined), let/const are hoisted but not initialized (temporal dead zone). Function declarations are fully hoisted.
+
+37. What is the this keyword?
+this refers to the object executing the current function. Value depends on how function is called: method (object), function (global/undefined), constructor (new object), arrow function (lexical this from enclosing scope).
+
+38. What is prototypal inheritance?
+JavaScript uses prototypal inheritance. Objects inherit properties from prototype object. Every object has __proto__ property pointing to prototype. Constructor functions have prototype property. Enables code reuse and object extension.
+
+39. What is the spread operator?
+Spread operator (...) expands iterables into individual elements. Uses: array concatenation, copying arrays/objects, function arguments, destructuring. Example: [...arr1, ...arr2], {...obj1, ...obj2}.
+
+40. What is destructuring?
+Destructuring extracts values from arrays/objects into variables. Array: const [a, b] = arr. Object: const {name, age} = obj. Supports default values, rest operator, nested destructuring. Makes code more concise.
+
+41. What is the difference between map, filter, and reduce?
+map: Transforms each element, returns new array of same length.
+filter: Selects elements matching condition, returns new array.
+reduce: Reduces array to single value by applying function cumulatively.
+All are pure functions, don't mutate original array.
+
+42. What is event delegation?
+Event delegation attaches single event listener to parent instead of multiple listeners to children. Uses event bubbling. Improves performance, handles dynamically added elements. Access target element via event.target.
+
+43. What is debouncing?
+Debouncing delays function execution until after specified time has passed since last invocation. Used for search input, window resize. Reduces function calls, improves performance. Implemented using setTimeout and clearTimeout.
+
+44. What is throttling?
+Throttling limits function execution to once per specified time interval. Used for scroll events, mouse movement. Ensures function runs at regular intervals. Different from debouncing which delays until inactivity.
+
+45. What is memoization in JavaScript?
+Memoization caches function results based on arguments. Subsequent calls with same arguments return cached result. Improves performance for expensive computations. Implemented using closures or WeakMap.
+
+46. What is the difference between null and undefined?
+undefined: Variable declared but not assigned, missing function parameter, non-existent object property.
+null: Intentional absence of value, must be explicitly assigned.
+typeof undefined is "undefined", typeof null is "object" (JavaScript quirk).
+
+47. What is a callback function?
+A callback is a function passed as argument to another function, executed later. Used for asynchronous operations, event handlers, array methods. Can lead to callback hell with nested callbacks.
+
+48. What is callback hell?
+Callback hell is deeply nested callbacks making code hard to read and maintain. Pyramid of doom. Solutions: Promises, async/await, named functions, modularization. Modern JavaScript prefers Promises/async-await.
+
+49. What is the fetch API?
+fetch is a modern API for making HTTP requests. Returns Promise. Supports request/response objects, streaming, CORS. Replaces XMLHttpRequest. Example: fetch(url).then(res => res.json()).then(data => console.log(data)).
+
+50. What is AJAX?
+AJAX (Asynchronous JavaScript and XML) updates web pages without reloading. Makes asynchronous requests to server. Originally used XMLHttpRequest, now uses fetch. Enables dynamic, responsive web applications.
+
+51. What is JSON?
+JSON (JavaScript Object Notation) is a lightweight data interchange format. Human-readable text format. Supports objects, arrays, strings, numbers, booleans, null. Methods: JSON.stringify() (object to JSON), JSON.parse() (JSON to object).
+
+52. What is a single-page application (SPA)?
+SPA loads single HTML page and dynamically updates content. No full page reloads. Uses JavaScript frameworks (React, Vue, Angular). Benefits: faster navigation, better UX. Challenges: SEO, initial load time, browser history.
+
+53. What is server-side rendering (SSR)?
+SSR renders pages on server and sends HTML to client. Improves initial load time, SEO, social media sharing. Frameworks: Next.js (React), Nuxt.js (Vue), Angular Universal. Trade-off: server load, complexity.
+
+54. What is static site generation (SSG)?
+SSG pre-renders pages at build time. Generates static HTML files. Extremely fast, secure, scalable. Ideal for content-heavy sites. Tools: Next.js, Gatsby, Hugo, Jekyll. Can combine with dynamic content (hybrid approach).
+
+55. What is Progressive Web App (PWA)?
+PWA uses modern web capabilities to deliver app-like experience. Features: offline functionality (service workers), installable, push notifications, responsive. Combines best of web and native apps.
+
+56. What is a service worker?
+Service worker is a script running in background, separate from web page. Enables offline functionality, push notifications, background sync. Acts as proxy between web app and network. Requires HTTPS.
+
+57. What is lazy loading?
+Lazy loading defers loading of non-critical resources until needed. Images, components, routes loaded on demand. Improves initial load time, reduces bandwidth. Implemented using Intersection Observer API or framework features.
+
+58. What is code splitting?
+Code splitting breaks bundle into smaller chunks loaded on demand. Reduces initial bundle size. Types: route-based, component-based. Webpack supports dynamic imports. Improves performance, especially for large applications.
+
+59. What is tree shaking?
+Tree shaking removes unused code from bundle. Relies on ES6 module static structure. Webpack and Rollup support tree shaking. Reduces bundle size. Requires proper module exports and imports.
+
+60. What is the difference between cookies and web storage?
+Cookies: Sent with every HTTP request, 4KB limit, can set expiration, accessible from server.
+Web Storage (localStorage/sessionStorage): Not sent with requests, 5-10MB limit, JavaScript only, better performance for client-side storage.
+
+61. What is same-origin policy?
+Same-origin policy restricts how documents/scripts from one origin interact with resources from another origin. Origins match if protocol, domain, and port are same. Security feature preventing malicious scripts. CORS allows controlled exceptions.
+
+62. What is XSS (Cross-Site Scripting)?
+XSS injects malicious scripts into web pages. Types: stored (persistent), reflected (non-persistent), DOM-based. Prevention: input validation, output encoding, Content Security Policy, sanitize user input, use frameworks with built-in protection.
+
+63. What is CSRF (Cross-Site Request Forgery)?
+CSRF tricks user into executing unwanted actions on authenticated site. Attacker exploits user's session. Prevention: CSRF tokens, SameSite cookie attribute, verify origin/referer headers, require re-authentication for sensitive actions.
+
+64. What is Content Security Policy (CSP)?
+CSP is HTTP header that controls resources browser can load. Prevents XSS, data injection attacks. Specifies allowed sources for scripts, styles, images. Example: Content-Security-Policy: default-src 'self'; script-src 'self' cdn.example.com.
+
+65. What is HTTPS and why is it important?
+HTTPS encrypts data between browser and server using TLS/SSL. Prevents eavesdropping, tampering, man-in-the-middle attacks. Required for PWAs, service workers, modern browser features. Improves SEO, user trust.
+
+66. What is OAuth?
+OAuth is an authorization framework for delegated access. Allows third-party applications to access user resources without sharing credentials. OAuth 2.0 is current version. Used for "Sign in with Google/Facebook" functionality.
+
+67. What is WebSocket?
+WebSocket provides full-duplex communication over single TCP connection. Enables real-time, bidirectional communication. Lower latency than HTTP polling. Used for chat applications, live updates, gaming, collaborative tools.
+
+68. What is HTTP/2?
+HTTP/2 is major revision of HTTP protocol. Features: multiplexing (multiple requests over single connection), header compression, server push, binary protocol. Improves performance, reduces latency. Requires HTTPS.
+
+69. What is CDN (Content Delivery Network)?
+CDN is distributed network of servers delivering content based on user's geographic location. Caches static assets closer to users. Benefits: faster load times, reduced bandwidth costs, improved availability, DDoS protection.
+
+70. What is caching?
+Caching stores copies of resources for faster access. Types: browser cache, CDN cache, server cache, database cache. Cache-Control headers control caching behavior. Improves performance, reduces server load.
+
+71. What is the difference between GET and POST?
+GET: Retrieves data, parameters in URL, cacheable, bookmarkable, length limited, idempotent.
+POST: Submits data, parameters in body, not cacheable, not bookmarkable, no length limit, not idempotent.
+Use GET for retrieval, POST for modifications.
+
+72. What is RESTful API design?
+RESTful design principles: use HTTP methods correctly, resource-based URLs, stateless, use HTTP status codes, versioning, pagination, filtering, HATEOAS. Example: GET /users, POST /users, PUT /users/:id, DELETE /users/:id.
+
+73. What is API versioning?
+API versioning manages changes without breaking existing clients. Methods: URL versioning (/v1/users), header versioning (Accept: application/vnd.api+json;version=1), query parameter (?version=1). Semantic versioning recommended.
+
+74. What is rate limiting?
+Rate limiting restricts number of API requests in time period. Prevents abuse, ensures fair usage, protects server resources. Implemented using tokens, sliding windows, fixed windows. Returns 429 Too Many Requests status.
+
+75. What is pagination?
+Pagination divides large datasets into pages. Methods: offset-based (page number, limit), cursor-based (pointer to position), keyset pagination. Improves performance, user experience. Include metadata: total count, next/previous links.
+
+76. What is MongoDB?
+MongoDB is a NoSQL document database. Stores data in flexible JSON-like documents (BSON). Features: schema-less, horizontal scaling, rich queries, indexing, aggregation framework. Used for flexible, scalable applications.
+
+77. What is SQL injection?
+SQL injection injects malicious SQL code through user input. Can read, modify, delete database data. Prevention: parameterized queries, prepared statements, input validation, ORM frameworks, least privilege principle.
+
+78. What is database indexing?
+Indexing creates data structure for faster queries. Trade-off: faster reads, slower writes, more storage. Types: B-tree (default), hash, full-text, geospatial. Index frequently queried columns, foreign keys, join columns.
+
+79. What is database normalization?
+Normalization organizes data to reduce redundancy. Normal forms: 1NF (atomic values), 2NF (no partial dependencies), 3NF (no transitive dependencies), BCNF. Benefits: data integrity, easier updates. Trade-off: more joins.
+
+80. What is database denormalization?
+Denormalization adds redundancy to improve read performance. Combines tables, duplicates data. Used in read-heavy applications, data warehouses. Trade-off: faster reads, more storage, complex updates, potential inconsistency.
+
+81. What is Docker?
+Docker is a platform for containerizing applications. Containers package application with dependencies. Benefits: consistency across environments, isolation, portability, efficient resource usage. Dockerfile defines container, Docker Compose manages multi-container apps.
+
+82. What is CI/CD?
+CI/CD automates software delivery. Continuous Integration: frequent code integration, automated testing. Continuous Deployment: automated deployment to production. Tools: Jenkins, GitHub Actions, GitLab CI, CircleCI. Improves quality, speed, reliability.
+
+83. What is Git?
+Git is a distributed version control system. Tracks code changes, enables collaboration. Concepts: repository, commit, branch, merge, pull request. Commands: git clone, add, commit, push, pull, merge. Essential for modern development.
+
+84. What is the difference between Git merge and rebase?
+Merge: Creates merge commit, preserves history, non-destructive.
+Rebase: Rewrites history, linear history, cleaner but can cause conflicts.
+Use merge for public branches, rebase for local cleanup.
+
+85. What is Agile methodology?
+Agile is iterative software development approach. Principles: customer collaboration, responding to change, working software, individuals over processes. Frameworks: Scrum, Kanban. Practices: sprints, daily standups, retrospectives.
+
+86. What is Test-Driven Development (TDD)?
+TDD writes tests before code. Process: write failing test, write minimal code to pass, refactor. Benefits: better design, fewer bugs, confidence in changes, documentation. Red-Green-Refactor cycle.
+
+87. What is unit testing?
+Unit testing tests individual components in isolation. Fast, focused, automated. Frameworks: Jest, Mocha, Jasmine (JavaScript), JUnit (Java), pytest (Python). Mock dependencies. Aim for high coverage of critical code.
+
+88. What is integration testing?
+Integration testing tests interaction between components. Verifies modules work together correctly. More complex than unit tests. Tests API endpoints, database interactions, external services. Catches interface issues.
+
+89. What is end-to-end testing?
+E2E testing tests complete application flow from user perspective. Simulates real user scenarios. Tools: Cypress, Selenium, Playwright, Puppeteer. Slower, more brittle than unit tests. Focus on critical user journeys.
+
+90. What is accessibility (a11y)?
+Accessibility ensures websites usable by people with disabilities. WCAG guidelines. Practices: semantic HTML, ARIA attributes, keyboard navigation, alt text, color contrast, screen reader support. Legal requirement in many jurisdictions.
+
+91. What is SEO?
+SEO (Search Engine Optimization) improves website visibility in search results. Techniques: semantic HTML, meta tags, sitemaps, fast loading, mobile-friendly, quality content, backlinks, structured data. Organic traffic source.
+
+92. What is Core Web Vitals?
+Core Web Vitals are Google's metrics for user experience. LCP (Largest Contentful Paint): loading performance. FID (First Input Delay): interactivity. CLS (Cumulative Layout Shift): visual stability. Affects SEO rankings.
+
+93. What is performance optimization?
+Performance optimization improves website speed. Techniques: minification, compression, caching, lazy loading, code splitting, image optimization, CDN, reduce HTTP requests, critical CSS, prefetching.
+
+94. What is image optimization?
+Image optimization reduces file size without quality loss. Techniques: compression, modern formats (WebP, AVIF), responsive images (srcset), lazy loading, appropriate dimensions, CDN. Images often largest assets.
+
+95. What is the difference between library and framework?
+Library: Collection of functions you call (you control flow). Example: React, Lodash.
+Framework: Defines application structure (framework controls flow). Example: Angular, Next.js.
+"You call library, framework calls you" (Inversion of Control).
+
+96. What is Vue.js?
+Vue is a progressive JavaScript framework for building UIs. Features: reactive data binding, component-based, virtual DOM, single-file components. Easier learning curve than React/Angular. Flexible, can be adopted incrementally.
+
+97. What is Angular?
+Angular is a comprehensive TypeScript framework by Google. Features: two-way data binding, dependency injection, RxJS, CLI, comprehensive tooling. Opinionated, full-featured. Steep learning curve but powerful for large applications.
+
+98. What is Svelte?
+Svelte is a compiler that converts components to efficient JavaScript at build time. No virtual DOM, smaller bundle size, faster runtime. Reactive by default. Growing popularity for performance-critical applications.
+
+99. What is micro-frontends?
+Micro-frontends extend microservices concept to frontend. Independent teams build features as separate applications. Benefits: independent deployment, technology diversity, team autonomy. Challenges: consistency, performance, complexity.
+
+100. What is JAMstack?
+JAMstack is architecture using JavaScript, APIs, and Markup. Pre-rendered static sites with dynamic functionality via APIs. Benefits: performance, security, scalability, developer experience. Tools: Next.js, Gatsby, Netlify, Vercel.
+
+101. What is WebAssembly?
+WebAssembly (Wasm) is binary instruction format for web. Enables near-native performance. Compile C, C++, Rust to run in browser. Use cases: games, video editing, CAD, scientific computing. Complements JavaScript.
+
+102. What is the difference between authentication and authorization?
+Authentication: Verifying user identity (who you are). Methods: passwords, OAuth, biometrics.
+Authorization: Determining user permissions (what you can do). Methods: roles, permissions, ACLs.
+Authentication comes before authorization.
+
+103. What is session management?
+Session management maintains user state across requests. Methods: cookies, tokens (JWT), server-side sessions. Security: secure cookies, HTTPS, session timeout, regenerate session ID, CSRF protection.
+
+104. What is load balancing?
+Load balancing distributes traffic across multiple servers. Algorithms: round-robin, least connections, IP hash. Benefits: high availability, scalability, fault tolerance. Types: hardware, software, DNS-based.
+
+105. What is horizontal vs vertical scaling?
+Horizontal scaling: Add more servers (scale out). Better for distributed systems, more complex.
+Vertical scaling: Add more resources to existing server (scale up). Simpler but has limits.
+Cloud enables easy horizontal scaling.
+
+106. What is database replication?
+Database replication copies data across multiple databases. Master-slave: writes to master, reads from slaves. Master-master: writes to multiple masters. Benefits: high availability, load distribution, disaster recovery.
+
+107. What is database sharding?
+Sharding partitions data across multiple databases. Each shard contains subset of data. Horizontal partitioning. Benefits: scalability, performance. Challenges: complexity, cross-shard queries, rebalancing.
+
+108. What is message queue?
+Message queue enables asynchronous communication between services. Producer sends messages, consumer processes them. Benefits: decoupling, scalability, reliability. Examples: RabbitMQ, Apache Kafka, AWS SQS.
+
+109. What is event-driven architecture?
+Event-driven architecture uses events to trigger and communicate between services. Components: event producers, event consumers, event bus. Benefits: loose coupling, scalability, real-time processing. Used in microservices.
+
+110. What is the difference between monolith and microservices?
+Monolith: Single application, shared database, deployed as unit. Simpler, easier to develop initially.
+Microservices: Independent services, separate databases, deployed independently. More complex but scalable, flexible, resilient.
+Choose based on team size, complexity, scalability needs.

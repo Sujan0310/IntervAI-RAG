@@ -1,0 +1,375 @@
+CLOUD & DEVOPS INTERVIEW QUESTIONS
+===================================
+
+SECTION 1: CLOUD COMPUTING FUNDAMENTALS
+----------------------------------------
+
+Q1: What is cloud computing and what are its main service models?
+A: Cloud computing delivers computing services over the internet. Main models: IaaS (Infrastructure as a Service), PaaS (Platform as a Service), SaaS (Software as a Service). IaaS provides virtual machines and storage, PaaS offers development platforms, SaaS delivers complete applications.
+
+Q2: Explain the difference between public, private, and hybrid clouds.
+A: Public cloud: Resources shared among multiple organizations (AWS, Azure, GCP). Private cloud: Dedicated infrastructure for single organization. Hybrid cloud: Combination of public and private clouds with data/application portability.
+
+Q3: What are the key benefits of cloud computing?
+A: Cost efficiency (pay-as-you-go), scalability, elasticity, high availability, disaster recovery, global reach, automatic updates, reduced maintenance overhead, faster time to market.
+
+Q4: What is cloud elasticity vs scalability?
+A: Scalability: Ability to handle increased load by adding resources. Elasticity: Automatic scaling up/down based on demand in real-time. Elasticity is dynamic scalability.
+
+Q5: Explain the shared responsibility model in cloud security.
+A: Cloud provider secures infrastructure (physical security, network, hypervisor). Customer secures data, applications, access management, OS patches, network configuration. Responsibility varies by service model (IaaS vs PaaS vs SaaS).
+
+Q6: What is multi-tenancy in cloud computing?
+A: Multiple customers (tenants) share same physical infrastructure while maintaining logical isolation. Resources are partitioned securely. Enables cost efficiency and resource optimization.
+
+Q7: What are availability zones and regions in cloud?
+A: Region: Geographic area with multiple data centers. Availability Zone: Isolated data center within region with independent power, cooling, networking. Provides fault tolerance and high availability.
+
+Q8: Explain cloud migration strategies (6 Rs).
+A: Rehost (lift-and-shift), Replatform (lift-tinker-shift), Repurchase (move to SaaS), Refactor (re-architect), Retire (decommission), Retain (keep on-premises). Choice depends on business needs and technical constraints.
+
+Q9: What is serverless computing?
+A: Cloud execution model where provider manages infrastructure. Developer writes functions that execute on-demand. Auto-scaling, pay-per-execution, no server management. Examples: AWS Lambda, Azure Functions.
+
+Q10: What are cloud-native applications?
+A: Applications designed specifically for cloud environments. Characteristics: microservices architecture, containerized, dynamically orchestrated, resilient, observable, automated deployment.
+
+
+SECTION 2: AWS SERVICES
+-----------------------
+
+Q11: What is Amazon EC2 and its key features?
+A: Elastic Compute Cloud - virtual servers in cloud. Features: multiple instance types, auto-scaling, elastic IPs, security groups, EBS volumes, AMIs, placement groups, spot instances.
+
+Q12: Explain AWS S3 storage classes.
+A: Standard (frequent access), Intelligent-Tiering (automatic optimization), Standard-IA (infrequent access), One Zone-IA, Glacier (archival), Glacier Deep Archive (long-term). Each optimized for different access patterns and costs.
+
+Q13: What is AWS Lambda and its use cases?
+A: Serverless compute service running code in response to events. Use cases: API backends, data processing, real-time file processing, scheduled tasks, IoT backends, chatbots.
+
+Q14: Explain AWS VPC components.
+A: Virtual Private Cloud isolates resources. Components: subnets (public/private), route tables, internet gateway, NAT gateway, security groups, NACLs, VPC peering, VPN connections.
+
+Q15: What is AWS RDS and its advantages?
+A: Relational Database Service - managed database. Advantages: automated backups, patching, scaling, multi-AZ deployment, read replicas, monitoring, encryption. Supports MySQL, PostgreSQL, Oracle, SQL Server, MariaDB.
+
+Q16: Explain AWS IAM concepts.
+A: Identity and Access Management. Components: Users (individuals), Groups (user collections), Roles (temporary credentials), Policies (permissions in JSON). Principle of least privilege.
+
+Q17: What is AWS CloudFormation?
+A: Infrastructure as Code service. Define resources in templates (JSON/YAML). Automates provisioning, ensures consistency, version control, rollback capability, stack management.
+
+Q18: Explain AWS Auto Scaling.
+A: Automatically adjusts compute capacity based on demand. Components: launch configuration/template, auto scaling group, scaling policies (target tracking, step, scheduled). Maintains availability and optimizes costs.
+
+Q19: What is AWS CloudWatch?
+A: Monitoring and observability service. Collects metrics, logs, events. Features: dashboards, alarms, anomaly detection, log insights, application insights, container insights.
+
+Q20: Explain AWS Elastic Load Balancing types.
+A: Application Load Balancer (HTTP/HTTPS, layer 7), Network Load Balancer (TCP/UDP, layer 4), Gateway Load Balancer (third-party appliances), Classic Load Balancer (legacy). Each for different use cases.
+
+
+SECTION 3: AZURE SERVICES
+-------------------------
+
+Q21: What is Azure Resource Manager?
+A: Deployment and management service for Azure. Provides consistent management layer. Features: resource groups, templates, RBAC, tags, locks, policies. Enables infrastructure as code.
+
+Q22: Explain Azure App Service.
+A: PaaS for hosting web apps, REST APIs, mobile backends. Supports multiple languages (.NET, Java, Node.js, Python, PHP). Features: auto-scaling, deployment slots, custom domains, SSL, continuous deployment.
+
+Q23: What is Azure Kubernetes Service (AKS)?
+A: Managed Kubernetes container orchestration. Azure handles control plane. Features: auto-scaling, monitoring, security updates, Azure AD integration, virtual nodes, dev spaces.
+
+Q24: Explain Azure Storage types.
+A: Blob (object storage), File (SMB file shares), Queue (message queue), Table (NoSQL key-value), Disk (block storage for VMs). Each optimized for specific scenarios.
+
+Q25: What is Azure Active Directory?
+A: Cloud-based identity and access management. Features: SSO, MFA, conditional access, identity protection, B2B/B2C, application management, device management.
+
+Q26: Explain Azure Functions.
+A: Serverless compute platform. Event-driven execution. Supports multiple languages. Triggers: HTTP, timer, queue, blob, event hub. Bindings simplify integration.
+
+Q27: What is Azure DevOps?
+A: Suite of development tools. Components: Boards (work tracking), Repos (Git), Pipelines (CI/CD), Test Plans, Artifacts (package management). Supports agile workflows.
+
+Q28: Explain Azure Virtual Network.
+A: Isolated network in Azure. Features: subnets, NSGs, route tables, VPN gateway, ExpressRoute, peering, service endpoints, private link. Enables hybrid connectivity.
+
+Q29: What is Azure Cosmos DB?
+A: Globally distributed NoSQL database. Multi-model (document, key-value, graph, column). Features: turnkey global distribution, elastic scaling, multiple consistency levels, SLAs.
+
+Q30: Explain Azure Monitor.
+A: Full-stack monitoring solution. Components: metrics, logs, alerts, application insights, network monitoring, container monitoring. Unified view of resources.
+
+
+SECTION 4: GOOGLE CLOUD PLATFORM
+---------------------------------
+
+Q31: What is Google Compute Engine?
+A: IaaS offering virtual machines. Features: custom machine types, preemptible VMs, live migration, persistent disks, snapshots, instance groups, load balancing.
+
+Q32: Explain Google Cloud Storage classes.
+A: Standard (frequent access), Nearline (monthly access), Coldline (quarterly access), Archive (yearly access). Automatic class transitions with lifecycle policies.
+
+Q33: What is Google Kubernetes Engine (GKE)?
+A: Managed Kubernetes service. Features: auto-repair, auto-upgrade, cluster autoscaling, workload identity, binary authorization, GKE Autopilot mode.
+
+Q34: Explain Google Cloud Functions.
+A: Serverless execution environment. Event-driven. Supports Node.js, Python, Go, Java. Triggers: HTTP, Cloud Storage, Pub/Sub, Firestore, Firebase.
+
+Q35: What is Google BigQuery?
+A: Serverless data warehouse. Petabyte-scale analytics. Features: SQL queries, streaming inserts, ML integration, BI Engine, geospatial analysis, federated queries.
+
+Q36: Explain Google Cloud Pub/Sub.
+A: Messaging service for event-driven systems. Features: at-least-once delivery, ordering, filtering, dead-letter topics, push/pull subscriptions, global availability.
+
+Q37: What is Google Cloud Run?
+A: Fully managed container platform. Serverless, auto-scaling. Deploy containers without managing infrastructure. Supports any language/library. Pay-per-use pricing.
+
+Q38: Explain Google Cloud IAM.
+A: Identity and Access Management. Components: members, roles (primitive, predefined, custom), policies. Organization hierarchy: organization, folders, projects, resources.
+
+Q39: What is Google Cloud Spanner?
+A: Globally distributed relational database. Combines benefits of relational structure with non-relational horizontal scaling. Strong consistency, high availability, SQL support.
+
+Q40: Explain Google Cloud Load Balancing.
+A: Global load balancing service. Types: HTTP(S), SSL Proxy, TCP Proxy, Network, Internal. Features: auto-scaling, health checks, CDN integration, traffic management.
+
+
+SECTION 5: DOCKER & CONTAINERS
+-------------------------------
+
+Q41: What is Docker and why use it?
+A: Platform for developing, shipping, running applications in containers. Benefits: consistency across environments, isolation, portability, efficient resource usage, faster deployment, microservices enablement.
+
+Q42: Explain Docker architecture.
+A: Client-server architecture. Docker Client (CLI), Docker Daemon (dockerd), Docker Registry (image storage). Components: images, containers, networks, volumes.
+
+Q43: What is a Docker image vs container?
+A: Image: Read-only template with application and dependencies. Container: Running instance of image. Image is class, container is object. Multiple containers from one image.
+
+Q44: Explain Dockerfile instructions.
+A: FROM (base image), RUN (execute commands), COPY/ADD (files), WORKDIR (working directory), ENV (environment variables), EXPOSE (ports), CMD (default command), ENTRYPOINT (executable).
+
+Q45: What are Docker volumes?
+A: Persistent data storage mechanism. Types: named volumes, bind mounts, tmpfs mounts. Volumes persist beyond container lifecycle. Enable data sharing between containers.
+
+Q46: Explain Docker networking modes.
+A: Bridge (default, isolated network), Host (container uses host network), None (no networking), Overlay (multi-host networking), Macvlan (assign MAC address). Custom networks for isolation.
+
+Q47: What is Docker Compose?
+A: Tool for defining multi-container applications. YAML file (docker-compose.yml) defines services, networks, volumes. Commands: up, down, ps, logs, exec. Simplifies complex deployments.
+
+Q48: Explain Docker multi-stage builds.
+A: Multiple FROM statements in Dockerfile. Each stage can copy artifacts from previous stages. Benefits: smaller final images, separation of build/runtime dependencies, improved security.
+
+Q49: What are Docker best practices?
+A: Use official base images, minimize layers, leverage build cache, use .dockerignore, run as non-root user, scan for vulnerabilities, use specific tags, implement health checks, keep images small.
+
+Q50: Explain Docker security considerations.
+A: Use trusted images, scan for vulnerabilities, run as non-root, limit capabilities, use read-only filesystems, implement resource limits, network segmentation, secrets management, regular updates.
+
+
+SECTION 6: KUBERNETES
+---------------------
+
+Q51: What is Kubernetes and its architecture?
+A: Container orchestration platform. Architecture: Control Plane (API server, scheduler, controller manager, etcd) and Worker Nodes (kubelet, kube-proxy, container runtime). Manages containerized applications at scale.
+
+Q52: Explain Kubernetes Pods.
+A: Smallest deployable unit. One or more containers sharing network/storage. Ephemeral by design. Containers in pod share localhost, volumes. Typically one container per pod.
+
+Q53: What are Kubernetes Services?
+A: Abstraction for exposing pods. Types: ClusterIP (internal), NodePort (external via node port), LoadBalancer (cloud load balancer), ExternalName (DNS). Provides stable endpoint for dynamic pods.
+
+Q54: Explain Kubernetes Deployments.
+A: Declarative updates for Pods and ReplicaSets. Features: rolling updates, rollbacks, scaling, self-healing. Manages desired state. Ensures specified number of replicas running.
+
+Q55: What are Kubernetes ConfigMaps and Secrets?
+A: ConfigMaps: Store non-sensitive configuration. Secrets: Store sensitive data (base64 encoded). Both inject data into pods via environment variables, command-line arguments, or volume mounts.
+
+Q56: Explain Kubernetes Namespaces.
+A: Virtual clusters within physical cluster. Provide scope for names. Enable resource quotas, access control. Common: default, kube-system, kube-public. Useful for multi-tenancy.
+
+Q57: What are Kubernetes Persistent Volumes?
+A: Storage abstraction. PersistentVolume (PV): cluster resource. PersistentVolumeClaim (PVC): user request. StorageClass: dynamic provisioning. Lifecycle independent of pods.
+
+Q58: Explain Kubernetes Ingress.
+A: API object managing external access to services. Provides HTTP/HTTPS routing, SSL termination, name-based virtual hosting, load balancing. Requires Ingress Controller (nginx, traefik).
+
+Q59: What are Kubernetes StatefulSets?
+A: Manages stateful applications. Provides: stable network identities, persistent storage, ordered deployment/scaling, ordered rolling updates. Use for databases, distributed systems.
+
+Q60: Explain Kubernetes DaemonSets.
+A: Ensures pod runs on all (or selected) nodes. Use cases: log collection, monitoring agents, storage daemons, network plugins. Automatically adds pods to new nodes.
+
+
+SECTION 7: CI/CD PIPELINES
+--------------------------
+
+Q61: What is Continuous Integration?
+A: Development practice where developers integrate code frequently. Each integration verified by automated build and tests. Benefits: early bug detection, reduced integration problems, faster development.
+
+Q62: What is Continuous Deployment vs Continuous Delivery?
+A: Continuous Delivery: Code always in deployable state, manual deployment approval. Continuous Deployment: Automated deployment to production after passing tests. CD requires CI.
+
+Q63: Explain Jenkins pipeline.
+A: Automation server for CI/CD. Pipeline as code (Jenkinsfile). Stages: checkout, build, test, deploy. Supports declarative and scripted syntax. Plugins for integration with various tools.
+
+Q64: What are GitLab CI/CD features?
+A: Built-in CI/CD in GitLab. .gitlab-ci.yml defines pipeline. Features: auto DevOps, environments, review apps, canary deployments, feature flags, container registry, security scanning.
+
+Q65: Explain GitHub Actions.
+A: CI/CD platform integrated with GitHub. Workflows defined in YAML. Triggered by events (push, PR, schedule). Marketplace for reusable actions. Matrix builds, secrets management.
+
+Q66: What is Azure Pipelines?
+A: CI/CD service in Azure DevOps. Supports any language, platform, cloud. YAML or classic editor. Features: multi-stage pipelines, approvals, gates, deployment strategies, artifact management.
+
+Q67: Explain CircleCI concepts.
+A: Cloud-based CI/CD platform. config.yml defines workflows. Features: orbs (reusable packages), workflows, caching, parallelism, Docker layer caching, insights.
+
+Q68: What are deployment strategies?
+A: Blue-Green (two identical environments), Canary (gradual rollout), Rolling (incremental updates), Recreate (stop old, start new), A/B Testing (feature testing). Each has tradeoffs.
+
+Q69: Explain infrastructure as code in CI/CD.
+A: Managing infrastructure through code. Tools: Terraform, CloudFormation, ARM templates. Benefits: version control, reproducibility, automation, consistency. Integrate with CI/CD pipelines.
+
+Q70: What are CI/CD best practices?
+A: Automate everything, fast feedback, test in production-like environment, small frequent changes, trunk-based development, feature flags, monitoring, rollback capability, security scanning, artifact versioning.
+
+
+SECTION 8: INFRASTRUCTURE AS CODE
+----------------------------------
+
+Q71: What is Terraform?
+A: Infrastructure as Code tool by HashiCorp. Declarative configuration (HCL). Manages multi-cloud resources. Features: plan, apply, state management, modules, providers, workspaces.
+
+Q72: Explain Terraform workflow.
+A: Write configuration, Initialize (terraform init), Plan (terraform plan), Apply (terraform apply), Destroy (terraform destroy). State file tracks resources. Version control configuration.
+
+Q73: What are Terraform modules?
+A: Reusable, composable infrastructure components. Encapsulate resources. Input variables, output values. Enable DRY principle. Public modules in Terraform Registry.
+
+Q74: Explain Terraform state.
+A: JSON file tracking managed resources. Maps configuration to real resources. Enables updates, deletions. Remote state for team collaboration. State locking prevents conflicts.
+
+Q75: What is Ansible?
+A: Configuration management and automation tool. Agentless (SSH). Playbooks in YAML. Idempotent operations. Features: ad-hoc commands, roles, inventory, variables, templates.
+
+Q76: Explain Ansible playbooks.
+A: YAML files defining automation tasks. Structure: plays (target hosts), tasks (actions), handlers (triggered tasks), variables, templates. Reusable with roles.
+
+Q77: What is Puppet?
+A: Configuration management tool. Declarative language (Puppet DSL). Agent-based architecture. Master-agent model. Features: manifests, modules, Hiera (data separation), PuppetDB.
+
+Q78: Explain Chef concepts.
+A: Configuration management using Ruby DSL. Components: recipes (configuration code), cookbooks (recipe collections), nodes (managed systems), Chef Server (central hub), knife (CLI tool).
+
+Q79: What is Pulumi?
+A: Infrastructure as Code using general-purpose languages (TypeScript, Python, Go, C#). Cloud-native, supports multiple clouds. Features: state management, secrets, policy as code, testing.
+
+Q80: Compare IaC tools.
+A: Terraform: multi-cloud, declarative, large ecosystem. Ansible: agentless, procedural, simple. Puppet/Chef: mature, agent-based, complex. CloudFormation: AWS-specific, native integration. Pulumi: real programming languages.
+
+
+SECTION 9: MONITORING & LOGGING
+--------------------------------
+
+Q81: What is Prometheus?
+A: Open-source monitoring system. Time-series database. Pull-based metrics collection. PromQL query language. Features: multi-dimensional data, alerting, service discovery, visualization with Grafana.
+
+Q82: Explain Grafana.
+A: Visualization and analytics platform. Supports multiple data sources (Prometheus, InfluxDB, Elasticsearch). Features: dashboards, alerts, annotations, templating, plugins.
+
+Q83: What is ELK Stack?
+A: Elasticsearch (search/analytics), Logstash (data processing), Kibana (visualization). Used for log aggregation and analysis. Beats for data shipping. Now called Elastic Stack.
+
+Q84: Explain distributed tracing.
+A: Tracking requests across microservices. Tools: Jaeger, Zipkin, AWS X-Ray. Concepts: traces, spans, context propagation. Helps identify bottlenecks, latency issues.
+
+Q85: What is Datadog?
+A: Cloud monitoring platform. Features: infrastructure monitoring, APM, log management, synthetic monitoring, real user monitoring, security monitoring. Unified observability.
+
+Q86: Explain New Relic.
+A: Application performance monitoring (APM). Features: transaction tracing, error analytics, database monitoring, browser monitoring, mobile monitoring, infrastructure monitoring.
+
+Q87: What are SLIs, SLOs, and SLAs?
+A: SLI (Service Level Indicator): Metric measuring service level. SLO (Service Level Objective): Target value for SLI. SLA (Service Level Agreement): Contract with consequences. Example: 99.9% uptime SLO.
+
+Q88: Explain log aggregation strategies.
+A: Centralized logging: collect logs from all sources. Structured logging: JSON format. Log levels: DEBUG, INFO, WARN, ERROR. Retention policies. Indexing for search. Correlation IDs for tracing.
+
+Q89: What is observability?
+A: Understanding system internal state from external outputs. Three pillars: metrics (quantitative data), logs (discrete events), traces (request flow). Enables debugging, performance optimization.
+
+Q90: Explain alerting best practices.
+A: Alert on symptoms, not causes. Actionable alerts only. Appropriate severity levels. Clear runbooks. Avoid alert fatigue. Use thresholds and anomaly detection. Test alerts regularly.
+
+
+SECTION 10: DEVOPS PRACTICES & CULTURE
+---------------------------------------
+
+Q91: What is DevOps?
+A: Cultural and technical movement combining development and operations. Principles: collaboration, automation, continuous improvement, customer focus. Practices: CI/CD, IaC, monitoring, agile.
+
+Q92: Explain DevOps lifecycle.
+A: Plan, Code, Build, Test, Release, Deploy, Operate, Monitor. Continuous feedback loop. Automation at each stage. Collaboration between teams. Iterative improvement.
+
+Q93: What is GitOps?
+A: Operational model using Git as single source of truth. Infrastructure and application definitions in Git. Automated deployment on Git changes. Tools: Flux, ArgoCD. Benefits: version control, audit trail, rollback.
+
+Q94: Explain shift-left testing.
+A: Testing earlier in development lifecycle. Benefits: early bug detection, reduced costs, faster feedback. Includes: unit tests, static analysis, security scanning in development phase.
+
+Q95: What is chaos engineering?
+A: Deliberately injecting failures to test system resilience. Tools: Chaos Monkey, Gremlin, Litmus. Practices: game days, fault injection, hypothesis-driven experiments. Improves reliability.
+
+Q96: Explain immutable infrastructure.
+A: Infrastructure components replaced rather than modified. No in-place updates. Benefits: consistency, reliability, easier rollback, reduced configuration drift. Implemented with containers, IaC.
+
+Q97: What is site reliability engineering (SRE)?
+A: Google's approach to operations. SREs are software engineers running production systems. Focus: automation, reliability, scalability. Error budgets balance reliability and feature velocity.
+
+Q98: Explain trunk-based development.
+A: Developers work on single branch (trunk/main). Short-lived feature branches. Frequent integration. Feature flags for incomplete features. Enables continuous integration.
+
+Q99: What are microservices DevOps challenges?
+A: Distributed tracing complexity, service discovery, configuration management, deployment coordination, monitoring at scale, inter-service communication, data consistency, testing complexity.
+
+Q100: Explain DevSecOps.
+A: Integrating security into DevOps. Security as code, automated security testing, vulnerability scanning, compliance as code, secrets management, security monitoring. Shift-left security.
+
+
+SECTION 11: ADVANCED TOPICS
+---------------------------
+
+Q101: What is service mesh?
+A: Infrastructure layer for service-to-service communication. Features: traffic management, security, observability. Examples: Istio, Linkerd, Consul. Sidecar proxy pattern (Envoy).
+
+Q102: Explain container orchestration comparison.
+A: Kubernetes: feature-rich, complex, industry standard. Docker Swarm: simpler, less features, Docker-native. Nomad: flexible, supports non-containers. ECS: AWS-specific, managed.
+
+Q103: What is edge computing in cloud?
+A: Processing data near source rather than centralized cloud. Benefits: reduced latency, bandwidth optimization, privacy. Use cases: IoT, CDN, real-time processing. Services: AWS Wavelength, Azure Edge Zones.
+
+Q104: Explain cloud cost optimization.
+A: Right-sizing instances, reserved/spot instances, auto-scaling, storage tiering, unused resource cleanup, monitoring costs, tagging resources, using managed services, multi-cloud strategy.
+
+Q105: What is FinOps?
+A: Financial operations for cloud. Practices: cost visibility, optimization, governance, forecasting, showback/chargeback. Collaboration between finance, engineering, business. Tools: CloudHealth, Cloudability.
+
+Q106: Explain disaster recovery strategies.
+A: Backup and restore (cheapest, slowest), Pilot light (minimal running), Warm standby (scaled-down), Multi-site (expensive, fastest). RTO (Recovery Time Objective), RPO (Recovery Point Objective).
+
+Q107: What is cloud-native security?
+A: Security designed for cloud environments. Principles: zero trust, least privilege, defense in depth, encryption, identity-based access, automated compliance, runtime protection, supply chain security.
+
+Q108: Explain API gateway patterns.
+A: Single entry point for microservices. Features: routing, authentication, rate limiting, caching, transformation, monitoring. Examples: Kong, Apigee, AWS API Gateway, Azure API Management.
+
+Q109: What is progressive delivery?
+A: Advanced deployment techniques beyond CI/CD. Includes: feature flags, canary releases, A/B testing, blue-green deployments, traffic shaping. Tools: LaunchDarkly, Split, Flagger.
+
+Q110: Explain platform engineering.
+A: Building internal developer platforms. Self-service infrastructure, golden paths, developer experience focus. Tools: Backstage, Humanitec. Reduces cognitive load, increases productivity.

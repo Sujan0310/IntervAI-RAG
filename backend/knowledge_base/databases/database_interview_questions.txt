@@ -1,0 +1,355 @@
+DATABASE INTERVIEW QUESTIONS - COMPREHENSIVE GUIDE
+
+=== SQL BASICS ===
+
+1. What is a database?
+Organized collection of structured data stored electronically. Managed by DBMS (Database Management System). Supports data storage, retrieval, modification, deletion.
+
+2. What is SQL?
+Structured Query Language for managing relational databases. Standard language for RDBMS. Operations: SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, DROP.
+
+3. What are the types of SQL commands?
+DDL (Data Definition Language): CREATE, ALTER, DROP, TRUNCATE. DML (Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE. DCL (Data Control Language): GRANT, REVOKE. TCL (Transaction Control Language): COMMIT, ROLLBACK, SAVEPOINT.
+
+4. What is a primary key?
+Unique identifier for table row. Cannot be NULL. Only one per table. Automatically creates index. Ensures entity integrity.
+
+5. What is a foreign key?
+Column referencing primary key of another table. Establishes relationship between tables. Enforces referential integrity. Can be NULL. Multiple foreign keys allowed.
+
+6. What is the difference between DELETE and TRUNCATE?
+DELETE: DML command, can use WHERE clause, slower, can rollback, triggers fire, logs each row. TRUNCATE: DDL command, removes all rows, faster, cannot rollback, no triggers, minimal logging.
+
+7. What are SQL joins?
+INNER JOIN: Returns matching rows from both tables. LEFT JOIN: All rows from left table, matching from right. RIGHT JOIN: All rows from right table, matching from left. FULL OUTER JOIN: All rows from both tables. CROSS JOIN: Cartesian product.
+
+8. What is a subquery?
+Query nested inside another query. Can be in SELECT, FROM, WHERE, HAVING clauses. Types: Scalar, row, table. Can be correlated or non-correlated.
+
+9. What is normalization?
+Process of organizing data to reduce redundancy. Forms: 1NF (atomic values), 2NF (no partial dependencies), 3NF (no transitive dependencies), BCNF (stricter 3NF). Benefits: Data integrity, less redundancy, easier maintenance.
+
+10. What is denormalization?
+Intentionally adding redundancy to improve read performance. Trade-off: Faster queries, slower writes, more storage, potential inconsistency. Used in data warehouses, reporting.
+
+=== ADVANCED SQL ===
+
+11. What are indexes?
+Data structure to speed up data retrieval. Types: B-tree, hash, bitmap, full-text. Trade-offs: Faster reads, slower writes, storage overhead. Create on frequently queried columns.
+
+12. What is a clustered index?
+Determines physical order of data in table. Only one per table. Leaf nodes contain actual data. Primary key creates clustered index by default.
+
+13. What is a non-clustered index?
+Separate structure from data. Multiple allowed per table. Leaf nodes contain pointers to data. Can include additional columns (covering index).
+
+14. What are database transactions?
+Group of operations treated as single unit. ACID properties: Atomicity (all or nothing), Consistency (valid state), Isolation (concurrent execution), Durability (permanent changes).
+
+15. What are isolation levels?
+READ UNCOMMITTED: Dirty reads possible. READ COMMITTED: No dirty reads. REPEATABLE READ: No dirty/non-repeatable reads. SERIALIZABLE: No dirty/non-repeatable/phantom reads. Trade-off: Consistency vs concurrency.
+
+16. What is a deadlock?
+Two or more transactions waiting for each other. Circular dependency. Database detects and resolves (usually rollback one transaction). Prevention: Lock ordering, timeouts.
+
+17. What are stored procedures?
+Precompiled SQL code stored in database. Benefits: Performance, security, reusability, reduced network traffic. Can have parameters, control flow, error handling.
+
+18. What are triggers?
+Automatic execution of code in response to events. Types: BEFORE, AFTER, INSTEAD OF. Events: INSERT, UPDATE, DELETE. Use cases: Audit logging, validation, cascading changes.
+
+19. What are views?
+Virtual table based on query. Benefits: Security (hide columns), simplification (complex queries), consistency. Types: Simple (updatable), complex (read-only), materialized (stored results).
+
+20. What is a materialized view?
+View with stored query results. Refreshed periodically or on-demand. Benefits: Faster queries, precomputed aggregations. Trade-offs: Storage, staleness, refresh overhead.
+
+=== DATABASE DESIGN ===
+
+21. What is an Entity-Relationship (ER) diagram?
+Visual representation of database structure. Components: Entities (tables), attributes (columns), relationships (foreign keys). Cardinality: One-to-one, one-to-many, many-to-many.
+
+22. What are the types of relationships?
+One-to-One: Single row in each table. One-to-Many: Single row in one table, multiple in another. Many-to-Many: Multiple rows in both tables, requires junction table.
+
+23. What is a composite key?
+Primary key consisting of multiple columns. Used when single column insufficient for uniqueness. All columns required for uniqueness.
+
+24. What is a candidate key?
+Column or set of columns that can uniquely identify row. Minimal (no redundant columns). One candidate key chosen as primary key.
+
+25. What is a surrogate key?
+Artificial key with no business meaning. Usually auto-incrementing integer or UUID. Benefits: Stability, simplicity, performance. Alternative to natural key.
+
+26. What is referential integrity?
+Ensures foreign key values exist in referenced table. Enforced by database. Actions: CASCADE, SET NULL, SET DEFAULT, RESTRICT, NO ACTION.
+
+27. What is data integrity?
+Accuracy and consistency of data. Types: Entity integrity (primary key), referential integrity (foreign key), domain integrity (data types, constraints), user-defined integrity (business rules).
+
+28. What are constraints?
+Rules enforced by database. Types: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT. Ensure data validity.
+
+29. What is a schema?
+Logical structure of database. Defines tables, columns, relationships, constraints. Can have multiple schemas in one database. Namespace for objects.
+
+30. What is database partitioning?
+Divide large table into smaller pieces. Types: Horizontal (rows), vertical (columns), functional (by feature). Benefits: Performance, manageability, availability.
+
+=== QUERY OPTIMIZATION ===
+
+31. What is query execution plan?
+Shows how database executes query. Includes: Table scans, index seeks, joins, sorts. Use EXPLAIN or EXPLAIN ANALYZE. Helps identify bottlenecks.
+
+32. How do you optimize slow queries?
+Techniques: Add indexes, rewrite query, use appropriate joins, avoid SELECT *, limit result set, use WHERE instead of HAVING, avoid functions on indexed columns, update statistics.
+
+33. What is query caching?
+Store query results in memory. Subsequent identical queries return cached results. Benefits: Faster response, reduced load. Invalidated on data changes.
+
+34. What are covering indexes?
+Index includes all columns needed by query. No table access required. Faster queries. Trade-off: Larger index size.
+
+35. What is index selectivity?
+Measure of index effectiveness. High selectivity: Few duplicate values, good for indexing. Low selectivity: Many duplicates, poor for indexing. Example: Gender (low), Email (high).
+
+36. What is the N+1 query problem?
+One query to get list, N queries to get details for each item. Solution: Use JOIN or eager loading. Common in ORMs.
+
+37. What are database statistics?
+Information about data distribution. Used by query optimizer. Includes: Row counts, distinct values, data distribution. Keep updated for optimal plans.
+
+38. What is query rewriting?
+Transform query to equivalent but more efficient form. Done by optimizer or manually. Examples: Subquery to JOIN, OR to UNION, IN to EXISTS.
+
+39. What is cost-based optimization?
+Optimizer estimates cost of different execution plans. Chooses plan with lowest cost. Based on statistics, indexes, data distribution.
+
+40. What is hint-based optimization?
+Provide hints to optimizer. Force specific execution plan. Use sparingly, can become outdated. Examples: Index hints, join hints.
+
+=== NOSQL DATABASES ===
+
+41. What is NoSQL?
+Non-relational databases. Types: Document (MongoDB), Key-Value (Redis), Column-family (Cassandra), Graph (Neo4j). Benefits: Scalability, flexibility, performance.
+
+42. What is the difference between SQL and NoSQL?
+SQL: Structured, schema, ACID, vertical scaling, complex queries. NoSQL: Flexible schema, BASE, horizontal scaling, simple queries, high performance.
+
+43. What is eventual consistency?
+Data eventually becomes consistent across nodes. Temporary inconsistencies allowed. Trade-off: Availability and partition tolerance (CAP theorem). Common in distributed systems.
+
+44. What is the CAP theorem?
+Cannot have all three: Consistency, Availability, Partition tolerance. Must choose two. CP systems: Consistent but may be unavailable. AP systems: Available but may be inconsistent.
+
+45. What is sharding?
+Horizontal partitioning across multiple servers. Each shard contains subset of data. Benefits: Scalability, performance. Challenges: Complexity, cross-shard queries.
+
+46. What is replication?
+Copy data across multiple servers. Types: Master-slave, master-master, peer-to-peer. Benefits: High availability, read scalability, disaster recovery.
+
+47. What is a document database?
+Stores data as documents (JSON, BSON). Schema-less, nested structures. Example: MongoDB. Use cases: Content management, catalogs, user profiles.
+
+48. What is a key-value store?
+Simplest NoSQL type. Store data as key-value pairs. Fast lookups. Example: Redis, DynamoDB. Use cases: Caching, session storage, real-time analytics.
+
+49. What is a column-family database?
+Store data in column families. Optimized for write-heavy workloads. Example: Cassandra, HBase. Use cases: Time-series data, IoT, analytics.
+
+50. What is a graph database?
+Store data as nodes and relationships. Optimized for connected data. Example: Neo4j. Use cases: Social networks, recommendation engines, fraud detection.
+
+=== DATABASE ADMINISTRATION ===
+
+51. What is database backup?
+Copy of database for recovery. Types: Full (entire database), differential (changes since last full), incremental (changes since last backup). Schedule regular backups.
+
+52. What is database recovery?
+Restore database from backup. Types: Point-in-time recovery, crash recovery. Use transaction logs. Test recovery procedures regularly.
+
+53. What is database replication?
+Synchronize data across multiple databases. Types: Synchronous (immediate), asynchronous (delayed). Benefits: High availability, disaster recovery, read scaling.
+
+54. What is database monitoring?
+Track database performance and health. Metrics: Query performance, resource usage, errors, connections. Tools: Built-in monitoring, third-party tools.
+
+55. What is database tuning?
+Optimize database performance. Areas: Query optimization, index tuning, configuration parameters, hardware resources, schema design.
+
+56. What is database security?
+Protect data from unauthorized access. Measures: Authentication, authorization, encryption, auditing, network security, SQL injection prevention.
+
+57. What is database encryption?
+Protect data confidentiality. Types: At-rest (stored data), in-transit (network), column-level, transparent data encryption (TDE).
+
+58. What are database users and roles?
+Users: Individual accounts. Roles: Groups of permissions. Benefits: Easier management, principle of least privilege, separation of duties.
+
+59. What is database auditing?
+Track database activities. Log: Logins, queries, schema changes, data modifications. Compliance requirements, security monitoring, troubleshooting.
+
+60. What is database maintenance?
+Regular tasks to keep database healthy. Tasks: Update statistics, rebuild indexes, check integrity, backup, monitor performance, apply patches.
+
+=== ADVANCED TOPICS ===
+
+61. What is OLTP vs OLAP?
+OLTP (Online Transaction Processing): Many short transactions, normalized, current data, high concurrency. OLAP (Online Analytical Processing): Complex queries, denormalized, historical data, aggregations.
+
+62. What is a data warehouse?
+Central repository for analytical data. ETL process (Extract, Transform, Load). Star/snowflake schema. Used for business intelligence, reporting.
+
+63. What is ETL?
+Extract: Get data from sources. Transform: Clean, validate, aggregate. Load: Insert into target. Alternative: ELT (load then transform).
+
+64. What is a star schema?
+Data warehouse design. Fact table (center) with dimension tables (points). Denormalized dimensions. Simple queries, good performance.
+
+65. What is a snowflake schema?
+Normalized star schema. Dimension tables further normalized. More complex queries, less redundancy, more joins.
+
+66. What is data modeling?
+Design database structure. Conceptual (high-level), logical (detailed), physical (implementation). Tools: ER diagrams, UML, data dictionaries.
+
+67. What is database migration?
+Move database to new platform/version. Challenges: Downtime, data integrity, compatibility. Strategies: Big bang, phased, parallel running.
+
+68. What is database versioning?
+Track schema changes over time. Tools: Flyway, Liquibase. Benefits: Reproducibility, rollback capability, collaboration.
+
+69. What is connection pooling?
+Reuse database connections. Avoid connection overhead. Configure: Min/max connections, timeout, validation. Improves performance, resource usage.
+
+70. What is database caching?
+Store frequently accessed data in memory. Levels: Query cache, result cache, application cache. Tools: Redis, Memcached. Reduces database load.
+
+=== SQL QUERIES ===
+
+71. How do you find duplicate records?
+SELECT column, COUNT(*) FROM table GROUP BY column HAVING COUNT(*) > 1;
+
+72. How do you find second highest salary?
+SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);
+Or: SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 1;
+
+73. How do you delete duplicate records?
+WITH CTE AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY column ORDER BY id) as rn FROM table) DELETE FROM CTE WHERE rn > 1;
+
+74. How do you find employees with no manager?
+SELECT * FROM employees WHERE manager_id IS NULL;
+
+75. How do you calculate running total?
+SELECT date, amount, SUM(amount) OVER (ORDER BY date) as running_total FROM transactions;
+
+76. How do you find employees hired in last 30 days?
+SELECT * FROM employees WHERE hire_date >= CURRENT_DATE - INTERVAL '30 days';
+
+77. How do you pivot data?
+Use CASE statements or PIVOT function. Example: SELECT name, SUM(CASE WHEN month='Jan' THEN sales ELSE 0 END) as Jan FROM sales GROUP BY name;
+
+78. How do you find top N records per group?
+WITH RankedData AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY category ORDER BY sales DESC) as rank FROM products) SELECT * FROM RankedData WHERE rank <= 3;
+
+79. How do you calculate percentage?
+SELECT category, COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products) as percentage FROM products GROUP BY category;
+
+80. How do you find records with no matching records in another table?
+SELECT * FROM table1 WHERE NOT EXISTS (SELECT 1 FROM table2 WHERE table2.id = table1.id);
+Or: SELECT * FROM table1 LEFT JOIN table2 ON table1.id = table2.id WHERE table2.id IS NULL;
+
+=== PERFORMANCE ===
+
+81. What is database indexing strategy?
+Index frequently queried columns, foreign keys, columns in WHERE/JOIN/ORDER BY. Avoid over-indexing. Consider composite indexes. Monitor index usage.
+
+82. What is query batching?
+Execute multiple queries in single round-trip. Reduces network overhead. Use transactions for consistency. Balance batch size.
+
+83. What is database connection management?
+Use connection pooling, close connections properly, set appropriate timeouts, monitor connection count, handle connection failures.
+
+84. What is database load balancing?
+Distribute queries across multiple servers. Read replicas for read queries. Master for writes. Benefits: Scalability, availability.
+
+85. What is database caching strategy?
+Cache frequently accessed data, set appropriate TTL, invalidate on updates, use cache-aside or write-through patterns, monitor hit rate.
+
+86. What is query pagination?
+Limit result set size. Use LIMIT/OFFSET or cursor-based pagination. Benefits: Better performance, reduced memory, better UX.
+
+87. What is database compression?
+Reduce storage size. Types: Row compression, page compression, column compression. Trade-offs: Storage vs CPU, read vs write performance.
+
+88. What is database archiving?
+Move old data to separate storage. Benefits: Improved performance, reduced costs, compliance. Strategies: Time-based, status-based.
+
+89. What is database scaling?
+Vertical: Increase server resources. Horizontal: Add more servers. Strategies: Read replicas, sharding, caching, denormalization.
+
+90. What is database profiling?
+Analyze query performance. Identify slow queries, resource usage, bottlenecks. Tools: Slow query log, performance schema, profilers.
+
+=== TRANSACTIONS ===
+
+91. What is a transaction?
+Group of operations executed as single unit. ACID properties ensure reliability. Use BEGIN, COMMIT, ROLLBACK.
+
+92. What is transaction isolation?
+Control visibility of changes between concurrent transactions. Levels: Read uncommitted, read committed, repeatable read, serializable.
+
+93. What is optimistic locking?
+Assume conflicts are rare. Check version before update. Retry on conflict. Good for read-heavy workloads.
+
+94. What is pessimistic locking?
+Lock data before modification. Prevent conflicts. Hold lock until transaction completes. Good for write-heavy workloads.
+
+95. What is two-phase commit?
+Distributed transaction protocol. Phase 1: Prepare (vote). Phase 2: Commit or abort. Ensures atomicity across multiple databases.
+
+96. What is savepoint?
+Intermediate point in transaction. Can rollback to savepoint without aborting entire transaction. Useful for complex transactions.
+
+97. What is transaction log?
+Record of all database changes. Used for recovery, replication. Types: Redo log, undo log. Ensure durability.
+
+98. What is write-ahead logging?
+Write changes to log before data files. Ensures durability and recovery. Used by most databases.
+
+99. What is transaction timeout?
+Maximum time for transaction. Prevents long-running transactions. Automatically rollback on timeout. Configure appropriately.
+
+100. What is distributed transaction?
+Transaction spanning multiple databases. Challenges: Network failures, consistency, performance. Solutions: Two-phase commit, saga pattern.
+
+=== BONUS QUESTIONS ===
+
+101. What is database normalization vs denormalization trade-off?
+Normalization: Less redundancy, better integrity, more joins, slower reads. Denormalization: Faster reads, more redundancy, potential inconsistency, faster writes.
+
+102. What is the difference between UNION and UNION ALL?
+UNION: Removes duplicates, slower. UNION ALL: Keeps duplicates, faster. Use UNION ALL when duplicates not possible or acceptable.
+
+103. What is the difference between WHERE and HAVING?
+WHERE: Filter rows before grouping, cannot use aggregate functions. HAVING: Filter groups after grouping, can use aggregate functions.
+
+104. What is the difference between INNER JOIN and OUTER JOIN?
+INNER JOIN: Only matching rows. OUTER JOIN: All rows from one or both tables, NULL for non-matching.
+
+105. What is the difference between CHAR and VARCHAR?
+CHAR: Fixed length, padded with spaces, faster for fixed-size data. VARCHAR: Variable length, no padding, saves space for variable-size data.
+
+106. What is the difference between PRIMARY KEY and UNIQUE?
+PRIMARY KEY: One per table, cannot be NULL, creates clustered index. UNIQUE: Multiple allowed, can be NULL (one NULL), creates non-clustered index.
+
+107. What is the difference between DELETE and DROP?
+DELETE: Remove rows, DML, can rollback, structure remains. DROP: Remove table, DDL, cannot rollback, structure removed.
+
+108. What is the difference between TRUNCATE and DROP?
+TRUNCATE: Remove all rows, DDL, faster, structure remains. DROP: Remove table, DDL, structure removed.
+
+109. What is the difference between stored procedure and function?
+Stored Procedure: Can have output parameters, can modify data, called with CALL/EXEC. Function: Returns single value, cannot modify data, used in expressions.
+
+110. What is the difference between view and materialized view?
+View: Virtual table, query executed each time, always current data. Materialized View: Stored results, faster queries, needs refresh, may be stale.

@@ -1,0 +1,353 @@
+PYTHON PROGRAMMING INTERVIEW QUESTIONS - COMPREHENSIVE GUIDE
+
+=== PYTHON BASICS ===
+
+1. What is Python and why is it popular?
+Python is a high-level, interpreted, dynamically-typed programming language. Popular for: readability, extensive libraries, versatility, large community, rapid development, data science, web development, automation.
+
+2. What are Python's key features?
+Features: Easy to learn, interpreted, object-oriented, dynamically typed, extensive standard library, cross-platform, open source, supports multiple paradigms, automatic memory management.
+
+3. What is PEP 8?
+PEP 8 is Python's style guide. Covers: naming conventions, indentation (4 spaces), line length (79 characters), imports, whitespace, comments, documentation strings.
+
+4. Explain Python's memory management.
+Mechanisms: Reference counting, garbage collection, memory pools, object allocation. Garbage collector handles cyclic references. Memory is managed automatically.
+
+5. What are Python's built-in data types?
+Numeric: int, float, complex. Sequence: list, tuple, range. Text: str. Mapping: dict. Set: set, frozenset. Boolean: bool. Binary: bytes, bytearray.
+
+6. What is the difference between list and tuple?
+List: Mutable, slower, more memory, methods for modification, dynamic. Tuple: Immutable, faster, less memory, hashable, can be dict keys, safer.
+
+7. What are Python decorators?
+Decorators modify function/class behavior. Syntax: @decorator. Use cases: logging, timing, authentication, caching, validation. Implemented as higher-order functions.
+
+8. Explain list comprehension.
+Syntax: [expression for item in iterable if condition]. Benefits: Concise, readable, faster than loops. Can create lists, sets, dicts. Supports nested comprehensions.
+
+9. What is the difference between == and is?
+==: Compares values (equality). is: Compares identity (same object in memory). Example: a == b checks value, a is b checks if same object.
+
+10. What are *args and **kwargs?
+*args: Variable positional arguments (tuple). **kwargs: Variable keyword arguments (dict). Allow flexible function signatures. Used in function definitions.
+
+=== OBJECT-ORIENTED PROGRAMMING ===
+
+11. What are the four pillars of OOP?
+Encapsulation: Data hiding, private attributes. Inheritance: Code reuse, is-a relationship. Polymorphism: Same interface, different implementations. Abstraction: Hide complexity, show essentials.
+
+12. Explain Python's class and object.
+Class: Blueprint for objects, defines attributes and methods. Object: Instance of class, has state and behavior. Created using class keyword.
+
+13. What is inheritance in Python?
+Types: Single, multiple, multilevel, hierarchical. Syntax: class Child(Parent). Benefits: Code reuse, extensibility. Method Resolution Order (MRO).
+
+14. What are class methods and static methods?
+Class method: @classmethod, receives cls, can modify class state. Static method: @staticmethod, no self/cls, utility function, belongs to class namespace.
+
+15. What is method overriding?
+Child class redefines parent method. Same name, different implementation. Uses super() to call parent method. Enables polymorphism.
+
+16. Explain __init__ and __new__.
+__new__: Creates instance, called before __init__, returns instance. __init__: Initializes instance, called after __new__, no return value.
+
+17. What are magic methods (dunder methods)?
+Special methods with double underscores. Examples: __str__, __repr__, __len__, __add__, __eq__. Enable operator overloading, customize behavior.
+
+18. What is the difference between __str__ and __repr__?
+__str__: Human-readable string, for end users, used by str() and print(). __repr__: Unambiguous representation, for developers, used by repr(), should be valid Python code.
+
+19. What is multiple inheritance?
+Class inherits from multiple parents. Diamond problem: Resolved by MRO (Method Resolution Order). Use super() carefully. Consider composition over inheritance.
+
+20. What are abstract classes?
+Cannot be instantiated, define interface. Use ABC module, @abstractmethod decorator. Force subclasses to implement methods. Ensure consistent interface.
+
+=== ADVANCED PYTHON ===
+
+21. What are generators?
+Functions that yield values, lazy evaluation, memory efficient. Use yield keyword. Can be iterated once. Good for large datasets, infinite sequences.
+
+22. Explain the difference between yield and return.
+return: Terminates function, returns value. yield: Pauses function, returns value, resumes from same point. Generators use yield.
+
+23. What are context managers?
+Manage resources, ensure cleanup. Use with statement. Implement __enter__ and __exit__. Examples: file handling, database connections, locks.
+
+24. What is the Global Interpreter Lock (GIL)?
+Mutex that allows only one thread to execute Python bytecode at a time. Affects CPU-bound multi-threaded programs. Not an issue for I/O-bound or multiprocessing.
+
+25. Explain Python's garbage collection.
+Automatic memory management. Reference counting + cyclic garbage collector. Generational approach (0, 1, 2). Can be controlled with gc module.
+
+26. What are metaclasses?
+Classes of classes, control class creation. Define __new__ and __init__. Use cases: Singleton, ORM, API frameworks. "Classes are objects too."
+
+27. What is the difference between deep copy and shallow copy?
+Shallow copy: Copies object, not nested objects, references same nested objects. Deep copy: Copies object and all nested objects recursively. Use copy module.
+
+28. Explain Python's descriptor protocol.
+Objects that define __get__, __set__, __delete__. Used for properties, methods, class methods, static methods. Control attribute access.
+
+29. What are Python's built-in higher-order functions?
+map(): Apply function to iterable. filter(): Filter iterable by condition. reduce(): Reduce iterable to single value. sorted(): Sort iterable. zip(): Combine iterables.
+
+30. What is monkey patching?
+Dynamically modifying class/module at runtime. Change behavior without changing source code. Use carefully, can cause maintenance issues.
+
+=== DATA STRUCTURES ===
+
+31. How do you implement a stack in Python?
+Use list with append() and pop(). Or collections.deque for better performance. LIFO (Last In First Out). Operations: push, pop, peek, isEmpty.
+
+32. How do you implement a queue in Python?
+Use collections.deque with append() and popleft(). Or queue.Queue for thread-safe operations. FIFO (First In First Out).
+
+33. What is a dictionary in Python?
+Hash table implementation, key-value pairs, O(1) lookup, mutable, unordered (before 3.7), ordered (3.7+). Keys must be hashable.
+
+34. What are sets in Python?
+Unordered collection of unique elements, O(1) membership testing, mutable (set) or immutable (frozenset). Operations: union, intersection, difference.
+
+35. Explain defaultdict.
+Dictionary subclass, provides default value for missing keys. From collections module. Avoids KeyError. Use cases: counting, grouping.
+
+36. What is Counter?
+Dictionary subclass for counting hashable objects. From collections module. Methods: most_common(), elements(), subtract(). Use cases: frequency counting.
+
+37. What is OrderedDict?
+Dictionary that remembers insertion order. From collections module. Before Python 3.7, regular dicts were unordered. Now less necessary.
+
+38. What is namedtuple?
+Tuple subclass with named fields. Immutable, memory efficient, readable. From collections module. Alternative to simple classes.
+
+39. What is deque?
+Double-ended queue, O(1) append/pop from both ends. From collections module. Better than list for queue operations. Thread-safe.
+
+40. What is ChainMap?
+Groups multiple dicts into single view. From collections module. Lookups search underlying dicts. Use cases: nested contexts, configuration.
+
+=== FUNCTIONAL PROGRAMMING ===
+
+41. What is a lambda function?
+Anonymous function, single expression, no name. Syntax: lambda args: expression. Use cases: short functions, callbacks, key functions.
+
+42. What is map() function?
+Applies function to every item in iterable. Returns iterator. Syntax: map(function, iterable). Can use with lambda or regular functions.
+
+43. What is filter() function?
+Filters iterable by condition. Returns iterator. Syntax: filter(function, iterable). Function returns True/False. Alternative: list comprehension.
+
+44. What is reduce() function?
+Reduces iterable to single value. From functools module. Syntax: reduce(function, iterable, initializer). Function takes two arguments.
+
+45. What are closures?
+Function that remembers enclosing scope. Inner function accesses outer function's variables. Use cases: data hiding, factory functions, decorators.
+
+46. What is partial function?
+Pre-fill some arguments of function. From functools module. Syntax: partial(func, *args, **kwargs). Use cases: callback functions, configuration.
+
+47. What is memoization?
+Cache function results, avoid recomputation. Use @lru_cache decorator from functools. Trade memory for speed. Good for recursive functions.
+
+48. What are first-class functions?
+Functions are objects, can be assigned to variables, passed as arguments, returned from functions. Enable higher-order functions, functional programming.
+
+49. What is function composition?
+Combine functions to create new function. Output of one is input of another. Use functools or custom implementation.
+
+50. What is currying?
+Transform function with multiple arguments into sequence of functions with single argument. Not common in Python, but possible.
+
+=== FILE HANDLING ===
+
+51. How do you read a file in Python?
+Methods: read(), readline(), readlines(). Use with statement for automatic closing. Modes: 'r' (read), 'w' (write), 'a' (append), 'b' (binary).
+
+52. What is the difference between read() and readline()?
+read(): Reads entire file or specified bytes. readline(): Reads single line. readlines(): Reads all lines into list.
+
+53. How do you write to a file?
+Use write() or writelines(). Open in 'w' (overwrite) or 'a' (append) mode. Use with statement. Flush buffer with flush().
+
+54. What is file buffering?
+Data temporarily stored in memory before writing to disk. Improves performance. Can control with buffering parameter. Flush manually if needed.
+
+55. How do you handle CSV files?
+Use csv module. csv.reader() for reading, csv.writer() for writing. DictReader and DictWriter for dict-based operations.
+
+56. How do you handle JSON files?
+Use json module. json.load() for reading, json.dump() for writing. json.loads() for strings, json.dumps() for serialization.
+
+57. What is pickle?
+Python object serialization. Converts objects to byte stream. pickle.dump() and pickle.load(). Not secure, don't unpickle untrusted data.
+
+58. How do you work with binary files?
+Open in binary mode ('rb', 'wb'). Use read() and write() with bytes. No encoding/decoding. Good for images, executables.
+
+59. What is the os module?
+Operating system interface. File operations, directory operations, process management, environment variables. Platform-independent.
+
+60. What is the pathlib module?
+Object-oriented file system paths. Path class, methods for file operations. More intuitive than os.path. Python 3.4+.
+
+=== ERROR HANDLING ===
+
+61. What is exception handling?
+Handle runtime errors gracefully. try-except-else-finally blocks. Prevents program crashes. Allows error recovery.
+
+62. What is the difference between Exception and Error?
+Exception: Recoverable, can be caught and handled. Error: Serious problems, usually not caught (SystemError, MemoryError).
+
+63. How do you create custom exceptions?
+Inherit from Exception class. Add custom attributes and methods. Raise with raise keyword. Use for domain-specific errors.
+
+64. What is the finally block?
+Always executes, regardless of exception. Used for cleanup (close files, release resources). Executes even if return in try/except.
+
+65. What is the else block in try-except?
+Executes if no exception raised. Runs after try, before finally. Use for code that should run only if try succeeds.
+
+66. What is exception chaining?
+Link exceptions, preserve original exception. Use raise...from syntax. Helps debugging, shows exception history.
+
+67. What are context managers for exception handling?
+Ensure cleanup even if exception occurs. Use with statement. Implement __enter__ and __exit__. __exit__ receives exception info.
+
+68. What is the assert statement?
+Debugging aid, test conditions. Raises AssertionError if condition False. Can be disabled with -O flag. Not for error handling.
+
+69. What is exception hierarchy?
+BaseException at top. Exception for user exceptions. Built-in exceptions: ValueError, TypeError, KeyError, etc. Inherit appropriately.
+
+70. How do you handle multiple exceptions?
+Multiple except blocks, or tuple of exceptions in single except. Use specific exceptions before general. Avoid bare except.
+
+=== MODULES & PACKAGES ===
+
+71. What is a module?
+File containing Python code. Can define functions, classes, variables. Imported with import statement. Reusable code organization.
+
+72. What is a package?
+Directory containing modules and __init__.py. Hierarchical structure. Can have sub-packages. Namespace organization.
+
+73. What is __init__.py?
+Marks directory as package. Can contain initialization code. Can define __all__ for from package import *. Can be empty.
+
+74. What is the difference between import and from...import?
+import module: Import entire module, access with module.name. from module import name: Import specific name, access directly.
+
+75. What is __name__ == "__main__"?
+Checks if script is run directly or imported. Allows module to be both library and script. Common pattern for testing.
+
+76. What is sys.path?
+List of directories Python searches for modules. Can be modified at runtime. Includes current directory, PYTHONPATH, standard library.
+
+77. What are relative imports?
+Import from same package. Use dot notation: from . import module, from .. import module. Only work in packages.
+
+78. What is __all__?
+List of public names in module. Used by from module import *. Controls what's exported. Good practice for API definition.
+
+79. What is the difference between module and package?
+Module: Single file. Package: Directory with __init__.py containing modules. Package can have sub-packages.
+
+80. How do you reload a module?
+Use importlib.reload(module). Useful in interactive sessions. Doesn't affect existing references. Use carefully.
+
+=== TESTING ===
+
+81. What is unittest?
+Built-in testing framework. TestCase class, assert methods, test discovery, fixtures. Similar to JUnit.
+
+82. What is pytest?
+Third-party testing framework. Simpler syntax, fixtures, parametrization, plugins. More Pythonic than unittest.
+
+83. What are test fixtures?
+Setup and teardown code for tests. setUp() and tearDown() in unittest. @pytest.fixture in pytest. Ensure clean test environment.
+
+84. What is mocking?
+Replace real objects with fake ones for testing. unittest.mock module. Mock, MagicMock, patch. Isolate code under test.
+
+85. What is test-driven development (TDD)?
+Write tests before code. Red-green-refactor cycle. Ensures testability, better design, documentation.
+
+86. What is code coverage?
+Measure of code tested. Use coverage.py. Aim for high coverage, but 100% not always necessary. Quality over quantity.
+
+87. What are parametrized tests?
+Run same test with different inputs. @pytest.mark.parametrize in pytest. Reduces code duplication, tests edge cases.
+
+88. What is integration testing?
+Test multiple components together. Verify interactions. More complex than unit tests. Use test databases, mocks.
+
+89. What is continuous integration?
+Automatically run tests on code changes. Use CI/CD tools (Jenkins, GitHub Actions). Catch bugs early, ensure quality.
+
+90. What are doctest?
+Tests in docstrings. Verify examples in documentation. Use doctest module. Good for documentation, not comprehensive testing.
+
+=== CONCURRENCY ===
+
+91. What is the difference between threading and multiprocessing?
+Threading: Shared memory, GIL limitation, good for I/O-bound. Multiprocessing: Separate processes, no GIL, good for CPU-bound, more overhead.
+
+92. What is asyncio?
+Asynchronous I/O framework. async/await syntax. Event loop, coroutines, tasks. Good for I/O-bound concurrent operations.
+
+93. What are coroutines?
+Functions defined with async def. Can be paused and resumed. Use await to call other coroutines. Enable asynchronous programming.
+
+94. What is the event loop?
+Core of asyncio. Manages and executes coroutines. Handles I/O operations. Single-threaded concurrency.
+
+95. What is the difference between concurrent and parallel?
+Concurrent: Multiple tasks in progress, not necessarily simultaneous. Parallel: Multiple tasks executing simultaneously. Concurrency enables parallelism.
+
+96. What is a thread pool?
+Reusable worker threads. concurrent.futures.ThreadPoolExecutor. Avoid thread creation overhead. Good for I/O-bound tasks.
+
+97. What is a process pool?
+Reusable worker processes. concurrent.futures.ProcessPoolExecutor. Bypass GIL. Good for CPU-bound tasks.
+
+98. What are futures?
+Represent result of asynchronous operation. concurrent.futures module. Methods: result(), done(), add_done_callback().
+
+99. What is thread safety?
+Code that works correctly with multiple threads. Use locks, semaphores, thread-local storage. Avoid race conditions.
+
+100. What are locks and semaphores?
+Lock: Mutual exclusion, only one thread at a time. Semaphore: Allow N threads. Use threading module. Prevent race conditions.
+
+=== BONUS QUESTIONS ===
+
+101. What are Python's built-in functions?
+len(), type(), str(), int(), list(), dict(), set(), range(), enumerate(), zip(), map(), filter(), sorted(), sum(), max(), min(), all(), any(), open(), print(), input().
+
+102. What is list slicing?
+Extract portion of list. Syntax: list[start:stop:step]. Negative indices, omit start/stop. Creates new list (shallow copy).
+
+103. What is string formatting?
+%-formatting (old), str.format() (new), f-strings (newest, Python 3.6+). F-strings: f"Hello {name}", most readable and fast.
+
+104. What are regular expressions?
+Pattern matching in strings. re module. Methods: search(), match(), findall(), sub(). Use raw strings r"pattern".
+
+105. What is the difference between append() and extend()?
+append(): Add single element to list. extend(): Add multiple elements (iterable) to list. append() adds as single item, extend() adds each item.
+
+106. What is the difference between remove(), pop(), and del?
+remove(value): Remove first occurrence of value. pop(index): Remove and return item at index. del: Delete by index or slice.
+
+107. What is the difference between sort() and sorted()?
+sort(): In-place sorting, modifies list, returns None. sorted(): Returns new sorted list, doesn't modify original, works on any iterable.
+
+108. What are Python's comparison operators?
+==, !=, <, >, <=, >=. Can chain: a < b < c. Use is for identity, == for equality.
+
+109. What are Python's logical operators?
+and, or, not. Short-circuit evaluation. Return operand, not boolean. Truthy/falsy values.
+
+110. What is the walrus operator?
+Assignment expression, :=. Assign and return value in single expression. Python 3.8+. Use in if, while, comprehensions.

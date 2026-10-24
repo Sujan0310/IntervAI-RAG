@@ -1,0 +1,367 @@
+SYSTEM DESIGN INTERVIEW QUESTIONS - COMPREHENSIVE GUIDE
+
+=== SCALABILITY & PERFORMANCE ===
+
+1. How would you design a URL shortening service like bit.ly?
+Design considerations: Generate unique short URLs, redirect to original URLs, handle high traffic, analytics tracking, expiration policies, custom URLs, database sharding, caching strategy, rate limiting.
+
+2. Design a distributed cache system like Redis or Memcached.
+Key features: In-memory storage, LRU eviction policy, distributed architecture, replication, persistence options, pub/sub messaging, data structures support, clustering, failover mechanisms.
+
+3. How would you design Twitter's timeline feature?
+Components: Tweet storage, follower relationships, timeline generation, fan-out on write vs read, caching strategies, real-time updates, pagination, trending topics, notifications.
+
+4. Design a rate limiter for an API.
+Approaches: Token bucket, leaky bucket, fixed window, sliding window, distributed rate limiting, Redis-based implementation, per-user limits, burst handling.
+
+5. How would you design Instagram's photo storage system?
+Requirements: Image upload/download, CDN integration, thumbnail generation, metadata storage, geographic distribution, backup strategies, compression, format conversion.
+
+6. Design a notification system for a social media platform.
+Features: Push notifications, email, SMS, in-app notifications, user preferences, delivery guarantees, batching, priority queues, retry mechanisms, analytics.
+
+7. How would you design Uber's ride matching system?
+Components: Real-time location tracking, geospatial indexing, matching algorithm, surge pricing, driver availability, ETA calculation, route optimization, concurrent requests.
+
+8. Design a distributed file storage system like Dropbox.
+Features: File synchronization, versioning, conflict resolution, chunking, deduplication, encryption, sharing permissions, offline access, bandwidth optimization.
+
+9. How would you design YouTube's video streaming service?
+Architecture: Video upload processing, transcoding, adaptive bitrate streaming, CDN distribution, recommendation engine, view counting, comments system, monetization.
+
+10. Design a search autocomplete system.
+Implementation: Trie data structure, prefix matching, popularity ranking, caching, real-time updates, personalization, typo tolerance, distributed architecture.
+
+=== DATABASE DESIGN ===
+
+11. How do you choose between SQL and NoSQL databases?
+Factors: Data structure, scalability needs, consistency requirements, query patterns, transaction support, schema flexibility, performance characteristics, operational complexity.
+
+12. Explain database sharding strategies.
+Methods: Horizontal sharding, vertical sharding, hash-based, range-based, directory-based, consistent hashing, shard key selection, rebalancing, cross-shard queries.
+
+13. What is database replication and its types?
+Types: Master-slave, master-master, synchronous, asynchronous, semi-synchronous. Benefits: High availability, read scalability, disaster recovery, geographic distribution.
+
+14. How would you handle database migrations in production?
+Strategies: Blue-green deployment, rolling updates, backward compatibility, schema versioning, data migration scripts, rollback plans, testing procedures.
+
+15. Explain ACID properties in databases.
+Atomicity: All or nothing transactions. Consistency: Valid state transitions. Isolation: Concurrent transaction handling. Durability: Permanent storage of committed data.
+
+16. What is eventual consistency?
+Concept: System eventually reaches consistent state, temporary inconsistencies allowed, used in distributed systems, CAP theorem implications, conflict resolution strategies.
+
+17. How do you optimize database queries?
+Techniques: Indexing, query optimization, denormalization, caching, connection pooling, batch operations, avoiding N+1 queries, explain plans, statistics.
+
+18. Explain database indexing strategies.
+Types: B-tree, hash, bitmap, full-text, composite indexes. Considerations: Query patterns, write performance impact, storage overhead, maintenance.
+
+19. What is database normalization?
+Forms: 1NF, 2NF, 3NF, BCNF. Purpose: Reduce redundancy, improve data integrity, optimize storage. Trade-offs: Query complexity, join performance.
+
+20. How would you design a multi-tenant database?
+Approaches: Shared database shared schema, shared database separate schemas, separate databases. Considerations: Isolation, scalability, cost, maintenance.
+
+=== MICROSERVICES ARCHITECTURE ===
+
+21. What are the advantages of microservices?
+Benefits: Independent deployment, technology diversity, scalability, fault isolation, team autonomy, easier maintenance, faster development cycles.
+
+22. How do microservices communicate?
+Methods: REST APIs, gRPC, message queues, event streaming, service mesh, synchronous vs asynchronous, request-response vs event-driven.
+
+23. What is service discovery?
+Purpose: Dynamic service location, health checking, load balancing. Tools: Consul, Eureka, etcd, Kubernetes DNS. Patterns: Client-side, server-side.
+
+24. Explain the API Gateway pattern.
+Functions: Request routing, authentication, rate limiting, request/response transformation, protocol translation, monitoring, caching, load balancing.
+
+25. What is the Circuit Breaker pattern?
+Purpose: Prevent cascading failures, fail fast, automatic recovery. States: Closed, open, half-open. Implementation: Hystrix, Resilience4j.
+
+26. How do you handle distributed transactions?
+Patterns: Saga pattern, two-phase commit, eventual consistency, compensating transactions, event sourcing, CQRS, idempotency.
+
+27. What is the Strangler Fig pattern?
+Purpose: Gradual migration from monolith to microservices, incremental replacement, risk mitigation, parallel running, feature toggles.
+
+28. Explain service mesh architecture.
+Components: Data plane (proxies), control plane (management). Features: Traffic management, security, observability, resilience. Tools: Istio, Linkerd.
+
+29. How do you version microservices APIs?
+Strategies: URL versioning, header versioning, content negotiation, backward compatibility, deprecation policies, semantic versioning.
+
+30. What is the Bulkhead pattern?
+Purpose: Isolate resources, prevent resource exhaustion, limit blast radius, thread pools, connection pools, circuit breakers.
+
+=== CACHING STRATEGIES ===
+
+31. What are different caching strategies?
+Types: Cache-aside, read-through, write-through, write-behind, refresh-ahead. Considerations: Consistency, performance, complexity.
+
+32. Explain cache eviction policies.
+Policies: LRU (Least Recently Used), LFU (Least Frequently Used), FIFO, Random, TTL-based. Selection criteria: Access patterns, memory constraints.
+
+33. What is cache stampede and how to prevent it?
+Problem: Multiple requests for expired cache entry. Solutions: Locking, probabilistic early expiration, background refresh, request coalescing.
+
+34. How do you implement distributed caching?
+Approaches: Consistent hashing, replication, partitioning. Tools: Redis Cluster, Memcached, Hazelcast. Considerations: Network latency, data locality.
+
+35. What is the difference between CDN and caching?
+CDN: Geographic distribution, static content, edge locations, DNS routing. Caching: Application-level, dynamic content, in-memory, database queries.
+
+=== LOAD BALANCING ===
+
+36. What are load balancing algorithms?
+Algorithms: Round robin, least connections, IP hash, weighted round robin, least response time, random, consistent hashing.
+
+37. Explain Layer 4 vs Layer 7 load balancing.
+Layer 4: Transport layer, TCP/UDP, faster, less flexible. Layer 7: Application layer, HTTP, content-based routing, SSL termination, more features.
+
+38. What is sticky session?
+Purpose: Route user to same server, session affinity, state management. Implementation: Cookie-based, IP-based. Trade-offs: Scalability, fault tolerance.
+
+39. How do you handle load balancer failures?
+Strategies: Active-passive, active-active, health checks, failover mechanisms, DNS-based, anycast routing, redundancy.
+
+40. What is global server load balancing?
+Purpose: Geographic distribution, disaster recovery, latency optimization. Methods: DNS-based, anycast, GeoDNS, traffic management.
+
+=== MESSAGE QUEUES & EVENT STREAMING ===
+
+41. What is the difference between message queue and pub/sub?
+Message Queue: Point-to-point, single consumer, guaranteed delivery, ordering. Pub/Sub: One-to-many, multiple subscribers, broadcast, topics.
+
+42. Explain Kafka architecture.
+Components: Brokers, topics, partitions, producers, consumers, consumer groups, ZooKeeper. Features: High throughput, durability, scalability, replication.
+
+43. What is event sourcing?
+Concept: Store events instead of state, event log, replay capability, audit trail, temporal queries, CQRS pattern, eventual consistency.
+
+44. How do you ensure message delivery guarantees?
+Levels: At-most-once, at-least-once, exactly-once. Techniques: Acknowledgments, idempotency, deduplication, transactions, retries.
+
+45. What is the difference between Kafka and RabbitMQ?
+Kafka: High throughput, log-based, replay, distributed. RabbitMQ: Traditional queue, routing, priority, lower latency, easier setup.
+
+=== SECURITY & AUTHENTICATION ===
+
+46. How would you implement OAuth 2.0?
+Flow: Authorization code, implicit, client credentials, resource owner password. Components: Authorization server, resource server, client, tokens.
+
+47. What is JWT and how does it work?
+Structure: Header, payload, signature. Benefits: Stateless, self-contained, scalable. Considerations: Token size, expiration, revocation.
+
+48. Explain API authentication methods.
+Methods: API keys, OAuth, JWT, Basic Auth, HMAC, mutual TLS. Considerations: Security, complexity, user experience, scalability.
+
+49. How do you prevent DDoS attacks?
+Techniques: Rate limiting, IP filtering, CDN, load balancing, traffic analysis, CAPTCHA, geographic blocking, cloud-based protection.
+
+50. What is the principle of least privilege?
+Concept: Minimum necessary permissions, role-based access control, temporary credentials, regular audits, defense in depth.
+
+=== MONITORING & OBSERVABILITY ===
+
+51. What are the three pillars of observability?
+Pillars: Metrics (quantitative data), Logs (event records), Traces (request flow). Tools: Prometheus, ELK stack, Jaeger, Grafana.
+
+52. How do you implement distributed tracing?
+Components: Trace ID, span ID, parent-child relationships, context propagation. Tools: Jaeger, Zipkin, OpenTelemetry. Benefits: Performance analysis, debugging.
+
+53. What metrics should you monitor?
+Categories: System (CPU, memory, disk), application (response time, error rate), business (conversions, revenue), infrastructure (network, database).
+
+54. Explain the RED method.
+Metrics: Rate (requests per second), Errors (error rate), Duration (response time). Purpose: Service-level monitoring, SLI/SLO tracking.
+
+55. What is the USE method?
+Metrics: Utilization, Saturation, Errors. Purpose: Resource monitoring, capacity planning, bottleneck identification.
+
+=== DEPLOYMENT & DEVOPS ===
+
+56. What is blue-green deployment?
+Strategy: Two identical environments, instant switchover, easy rollback, zero downtime, testing in production-like environment.
+
+57. Explain canary deployment.
+Approach: Gradual rollout, small percentage of traffic, monitoring, automated rollback, risk mitigation, A/B testing capability.
+
+58. What is infrastructure as code?
+Concept: Declarative configuration, version control, reproducibility, automation. Tools: Terraform, CloudFormation, Ansible, Puppet.
+
+59. How do you implement CI/CD?
+Pipeline: Source control, build, test, deploy, monitor. Tools: Jenkins, GitLab CI, GitHub Actions, CircleCI. Practices: Automated testing, continuous feedback.
+
+60. What is container orchestration?
+Purpose: Container deployment, scaling, networking, service discovery, health monitoring. Tools: Kubernetes, Docker Swarm, ECS, Nomad.
+
+=== DATA PROCESSING ===
+
+61. What is batch processing vs stream processing?
+Batch: Large volumes, scheduled, high latency, complete data. Stream: Real-time, continuous, low latency, incremental processing.
+
+62. Explain MapReduce paradigm.
+Phases: Map (transform), Shuffle (group), Reduce (aggregate). Use cases: Large-scale data processing, distributed computing, parallel processing.
+
+63. What is data partitioning?
+Purpose: Distribute data, improve performance, enable parallelism. Methods: Range, hash, list, composite. Considerations: Skew, rebalancing.
+
+64. How do you handle data consistency in distributed systems?
+Approaches: Strong consistency, eventual consistency, causal consistency, read-your-writes, monotonic reads, bounded staleness.
+
+65. What is the CAP theorem?
+Trade-offs: Consistency, Availability, Partition tolerance. Reality: Choose two, partition tolerance required, CP vs AP systems.
+
+=== API DESIGN ===
+
+66. What are REST API best practices?
+Principles: Resource-based URLs, HTTP methods, status codes, versioning, pagination, filtering, HATEOAS, documentation, security.
+
+67. Explain GraphQL advantages.
+Benefits: Single endpoint, flexible queries, no over-fetching, strong typing, introspection, real-time subscriptions, client-driven.
+
+68. What is API rate limiting?
+Purpose: Prevent abuse, ensure fair usage, protect resources. Implementation: Token bucket, sliding window, Redis-based, per-user limits.
+
+69. How do you version APIs?
+Strategies: URL versioning (/v1/), header versioning, content negotiation, backward compatibility, deprecation policies, documentation.
+
+70. What is idempotency in APIs?
+Concept: Same request produces same result, safe retries, important for PUT/DELETE, implementation using idempotency keys.
+
+=== NETWORKING ===
+
+71. Explain DNS resolution process.
+Steps: Browser cache, OS cache, recursive resolver, root servers, TLD servers, authoritative servers, caching, TTL.
+
+72. What is CDN and how does it work?
+Purpose: Content delivery, edge locations, caching, geographic distribution, reduced latency, DDoS protection, SSL/TLS termination.
+
+73. How does HTTPS work?
+Process: TLS handshake, certificate verification, key exchange, encryption, data transfer. Components: Public/private keys, certificates, cipher suites.
+
+74. What is WebSocket?
+Protocol: Full-duplex communication, persistent connection, real-time data, lower overhead than HTTP polling, use cases: chat, gaming, live updates.
+
+75. Explain HTTP/2 improvements.
+Features: Multiplexing, header compression, server push, binary protocol, stream prioritization, single connection, backward compatible.
+
+=== STORAGE SYSTEMS ===
+
+76. What is object storage?
+Characteristics: Flat namespace, metadata, REST API, scalability, durability, eventual consistency. Examples: S3, Azure Blob, GCS.
+
+77. Explain block storage vs file storage.
+Block: Raw storage, high performance, databases, VMs. File: Hierarchical, shared access, NFS/SMB, easier management.
+
+78. What is data replication?
+Types: Synchronous, asynchronous, multi-master, chain replication. Purpose: High availability, disaster recovery, read scalability.
+
+79. How do you ensure data durability?
+Techniques: Replication, erasure coding, checksums, backups, geographic distribution, RAID, snapshots, versioning.
+
+80. What is cold storage vs hot storage?
+Hot: Frequent access, low latency, higher cost, SSD. Cold: Infrequent access, higher latency, lower cost, archival, Glacier.
+
+=== REAL-TIME SYSTEMS ===
+
+81. How would you design a real-time chat application?
+Components: WebSocket connections, message queue, presence system, message history, read receipts, typing indicators, push notifications.
+
+82. Design a real-time analytics dashboard.
+Architecture: Stream processing, time-series database, aggregation, visualization, WebSocket updates, caching, data retention.
+
+83. What is event-driven architecture?
+Concept: Events trigger actions, loose coupling, asynchronous, scalable, event sourcing, CQRS, eventual consistency.
+
+84. How do you handle real-time data synchronization?
+Approaches: Operational transformation, CRDT, version vectors, conflict resolution, last-write-wins, merge strategies.
+
+85. What is the actor model?
+Concept: Concurrent computation, message passing, isolated state, location transparency, fault tolerance. Frameworks: Akka, Erlang.
+
+=== SEARCH & INDEXING ===
+
+86. How would you implement full-text search?
+Components: Inverted index, tokenization, stemming, ranking, relevance scoring, faceted search, autocomplete, fuzzy matching.
+
+87. What is Elasticsearch architecture?
+Components: Nodes, clusters, indices, shards, replicas. Features: Distributed, RESTful, JSON, near real-time, scalable.
+
+88. Explain search ranking algorithms.
+Algorithms: TF-IDF, BM25, PageRank, learning to rank. Factors: Relevance, popularity, freshness, personalization, location.
+
+89. How do you handle search at scale?
+Techniques: Sharding, replication, caching, query optimization, index optimization, distributed search, load balancing.
+
+90. What is semantic search?
+Concept: Understanding intent, context, synonyms, embeddings, vector search, neural networks, natural language processing.
+
+=== MOBILE BACKEND ===
+
+91. How do you design APIs for mobile apps?
+Considerations: Bandwidth optimization, offline support, battery efficiency, versioning, push notifications, authentication, data synchronization.
+
+92. What is backend-for-frontend pattern?
+Purpose: Specialized backends per client type, optimized responses, reduced over-fetching, client-specific logic, independent evolution.
+
+93. How do you handle offline-first mobile apps?
+Strategies: Local storage, sync protocols, conflict resolution, queue operations, eventual consistency, background sync.
+
+94. What is push notification architecture?
+Components: Provider (APNs, FCM), application server, device tokens, message queue, delivery tracking, analytics, targeting.
+
+95. How do you optimize mobile API responses?
+Techniques: Pagination, field filtering, compression, caching, CDN, GraphQL, batch requests, delta updates.
+
+=== ADVANCED TOPICS ===
+
+96. What is chaos engineering?
+Purpose: Test system resilience, inject failures, identify weaknesses, improve reliability, Netflix Chaos Monkey, controlled experiments.
+
+97. Explain the Saga pattern.
+Purpose: Distributed transactions, compensating transactions, choreography vs orchestration, eventual consistency, failure handling.
+
+98. What is CQRS?
+Concept: Command Query Responsibility Segregation, separate read/write models, event sourcing, scalability, complexity trade-offs.
+
+99. How do you implement multi-region deployment?
+Considerations: Data replication, latency, consistency, failover, routing, compliance, cost, disaster recovery.
+
+100. What is service mesh?
+Purpose: Service-to-service communication, traffic management, security, observability, resilience. Components: Data plane, control plane. Tools: Istio, Linkerd.
+
+=== BONUS QUESTIONS ===
+
+101. How would you design a recommendation system?
+Components: User profiling, item features, collaborative filtering, content-based filtering, hybrid approaches, real-time updates, A/B testing.
+
+102. Design a distributed lock service.
+Requirements: Mutual exclusion, deadlock prevention, fault tolerance, performance. Implementations: Redis, ZooKeeper, etcd, Chubby.
+
+103. What is the Bulkhead pattern in microservices?
+Purpose: Isolate failures, resource partitioning, thread pools, connection pools, prevent cascading failures, resilience.
+
+104. How do you implement feature flags?
+Purpose: Toggle features, gradual rollout, A/B testing, kill switches. Implementation: Configuration service, evaluation logic, targeting rules.
+
+105. What is the Strangler Fig pattern?
+Purpose: Incremental migration, legacy system replacement, parallel running, risk mitigation, gradual transition.
+
+106. How would you design a payment processing system?
+Requirements: Security, compliance, idempotency, reconciliation, fraud detection, multiple payment methods, refunds, webhooks.
+
+107. Design a job scheduling system.
+Features: Cron-like scheduling, distributed execution, retry logic, monitoring, priority queues, resource management, fault tolerance.
+
+108. What is the Sidecar pattern?
+Purpose: Extend functionality, logging, monitoring, proxying, configuration, deployment alongside main container, service mesh.
+
+109. How do you implement API gateway?
+Features: Routing, authentication, rate limiting, transformation, aggregation, caching, monitoring, protocol translation.
+
+110. What is the Ambassador pattern?
+Purpose: Proxy for external services, retry logic, circuit breaking, monitoring, offload common functionality, language-agnostic.

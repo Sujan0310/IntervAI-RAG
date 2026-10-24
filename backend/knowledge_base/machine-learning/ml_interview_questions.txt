@@ -1,0 +1,342 @@
+MACHINE LEARNING INTERVIEW QUESTIONS
+
+1. What is Machine Learning?
+Machine Learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing algorithms that can access data and use it to learn for themselves.
+
+2. What are the types of Machine Learning?
+- Supervised Learning: Learning with labeled data (classification, regression)
+- Unsupervised Learning: Learning with unlabeled data (clustering, dimensionality reduction)
+- Reinforcement Learning: Learning through interaction with environment (rewards and penalties)
+- Semi-supervised Learning: Combination of labeled and unlabeled data
+
+3. Explain the difference between classification and regression.
+Classification predicts discrete class labels (e.g., spam/not spam), while regression predicts continuous values (e.g., house prices). Classification output is categorical, regression output is numerical.
+
+4. What is overfitting and how do you prevent it?
+Overfitting occurs when a model learns training data too well, including noise, leading to poor generalization. Prevention methods:
+- Cross-validation
+- Regularization (L1, L2)
+- Dropout
+- Early stopping
+- More training data
+- Feature selection
+
+5. What is the bias-variance tradeoff?
+Bias is error from incorrect assumptions in the learning algorithm. Variance is error from sensitivity to small fluctuations in training data. High bias leads to underfitting, high variance leads to overfitting. The goal is to find the sweet spot that minimizes total error.
+
+6. Explain gradient descent.
+Gradient descent is an optimization algorithm used to minimize the cost function by iteratively moving in the direction of steepest descent. It updates parameters by computing gradients and taking steps proportional to the negative gradient.
+
+7. What is a neural network?
+A neural network is a computing system inspired by biological neural networks. It consists of interconnected nodes (neurons) organized in layers: input layer, hidden layers, and output layer. Each connection has a weight that adjusts during training.
+
+8. What is backpropagation?
+Backpropagation is the algorithm used to train neural networks. It calculates the gradient of the loss function with respect to each weight by propagating errors backward through the network, then updates weights using gradient descent.
+
+9. What is the difference between batch gradient descent, stochastic gradient descent, and mini-batch gradient descent?
+- Batch GD: Uses entire dataset for each update (slow but stable)
+- Stochastic GD: Uses one sample for each update (fast but noisy)
+- Mini-batch GD: Uses small batches (balance between speed and stability)
+
+10. What is regularization?
+Regularization is a technique to prevent overfitting by adding a penalty term to the loss function. L1 regularization (Lasso) adds absolute value of weights, L2 regularization (Ridge) adds squared value of weights.
+
+11. Explain cross-validation.
+Cross-validation is a technique to assess model performance by splitting data into k folds, training on k-1 folds and validating on the remaining fold, repeating k times. This provides a more robust estimate of model performance.
+
+12. What is feature engineering?
+Feature engineering is the process of creating new features or transforming existing features to improve model performance. It includes feature extraction, feature selection, feature scaling, and feature creation.
+
+13. What is the curse of dimensionality?
+As the number of features increases, the amount of data needed to generalize accurately grows exponentially. High-dimensional spaces become sparse, making it difficult to find patterns and leading to overfitting.
+
+14. What is ensemble learning?
+Ensemble learning combines multiple models to produce better predictions than individual models. Common methods include bagging (Random Forest), boosting (XGBoost, AdaBoost), and stacking.
+
+15. Explain the difference between bagging and boosting.
+Bagging trains multiple models independently in parallel and averages predictions (reduces variance). Boosting trains models sequentially, each correcting errors of previous models (reduces bias). Bagging is less prone to overfitting than boosting.
+
+16. What is a confusion matrix?
+A confusion matrix is a table showing true positives, true negatives, false positives, and false negatives. It helps evaluate classification model performance. From it, we calculate precision, recall, F1-score, and accuracy.
+
+17. Explain precision and recall.
+Precision = TP/(TP+FP) - proportion of positive predictions that are correct. Recall = TP/(TP+FN) - proportion of actual positives correctly identified. High precision means few false positives, high recall means few false negatives.
+
+18. What is the F1 score?
+F1 score is the harmonic mean of precision and recall: 2 * (precision * recall) / (precision + recall). It provides a single metric balancing both precision and recall, useful when class distribution is imbalanced.
+
+19. What is ROC curve and AUC?
+ROC (Receiver Operating Characteristic) curve plots true positive rate vs false positive rate at various thresholds. AUC (Area Under Curve) measures overall model performance - higher AUC (closer to 1) indicates better model.
+
+20. Explain decision trees.
+Decision trees split data based on feature values to make predictions. Each internal node represents a feature test, branches represent outcomes, leaves represent class labels or values. Prone to overfitting but interpretable.
+
+21. What is Random Forest?
+Random Forest is an ensemble of decision trees trained on random subsets of data and features. Predictions are made by averaging (regression) or voting (classification). Reduces overfitting and improves accuracy over single trees.
+
+22. Explain Support Vector Machines (SVM).
+SVM finds the optimal hyperplane that maximally separates classes in feature space. Uses kernel trick to handle non-linear boundaries. Effective in high dimensions, memory efficient, but slow on large datasets.
+
+23. What are kernel functions in SVM?
+Kernels transform data into higher dimensions where linear separation is possible. Common kernels: Linear, Polynomial, RBF (Radial Basis Function), Sigmoid. RBF is most popular for non-linear problems.
+
+24. What is k-Nearest Neighbors (k-NN)?
+k-NN classifies data points based on majority vote of k nearest neighbors. Simple, no training phase, but slow prediction, sensitive to feature scaling, and struggles with high dimensions.
+
+25. Explain Naive Bayes classifier.
+Naive Bayes applies Bayes' theorem assuming feature independence. Despite "naive" assumption, works well for text classification and spam filtering. Fast, requires small training data, handles high dimensions well.
+
+26. What is logistic regression?
+Despite its name, logistic regression is a classification algorithm using sigmoid function to output probabilities between 0 and 1. Linear decision boundary, interpretable, works well for binary classification.
+
+27. Explain K-means clustering.
+K-means partitions data into k clusters by minimizing within-cluster variance. Algorithm: initialize k centroids, assign points to nearest centroid, update centroids, repeat until convergence. Sensitive to initialization and outliers.
+
+28. What is hierarchical clustering?
+Hierarchical clustering builds a tree of clusters (dendrogram). Agglomerative (bottom-up): starts with individual points, merges closest clusters. Divisive (top-down): starts with all points, recursively splits. No need to specify k beforehand.
+
+29. What is DBSCAN?
+DBSCAN (Density-Based Spatial Clustering) groups points that are closely packed together. Can find arbitrarily shaped clusters and identify outliers. Parameters: epsilon (neighborhood radius) and minPts (minimum points).
+
+30. Explain Principal Component Analysis (PCA).
+PCA reduces dimensionality by projecting data onto principal components (directions of maximum variance). Unsupervised, linear transformation. Useful for visualization, noise reduction, and speeding up algorithms.
+
+31. What is t-SNE?
+t-SNE (t-Distributed Stochastic Neighbor Embedding) is a non-linear dimensionality reduction technique for visualization. Preserves local structure better than PCA. Commonly used for visualizing high-dimensional data in 2D/3D.
+
+32. Explain autoencoders.
+Autoencoders are neural networks that learn compressed representations of data. Encoder compresses input to latent space, decoder reconstructs original input. Used for dimensionality reduction, denoising, and anomaly detection.
+
+33. What is transfer learning?
+Transfer learning uses knowledge from pre-trained models on new tasks. Fine-tune pre-trained model on new dataset. Effective when new dataset is small. Common in computer vision (ImageNet models) and NLP (BERT, GPT).
+
+34. Explain convolutional neural networks (CNN).
+CNNs are designed for image processing. Use convolutional layers to detect features, pooling layers to reduce dimensions, fully connected layers for classification. Automatically learn hierarchical features from raw pixels.
+
+35. What are pooling layers in CNN?
+Pooling reduces spatial dimensions while retaining important features. Max pooling takes maximum value in region, average pooling takes average. Provides translation invariance and reduces computation.
+
+36. Explain recurrent neural networks (RNN).
+RNNs process sequential data by maintaining hidden state across time steps. Each step uses current input and previous hidden state. Used for time series, text, speech. Suffer from vanishing gradient problem.
+
+37. What is LSTM?
+LSTM (Long Short-Term Memory) is an RNN variant that solves vanishing gradient problem. Uses gates (forget, input, output) to control information flow. Can learn long-term dependencies. Used in language modeling, translation.
+
+38. Explain GRU.
+GRU (Gated Recurrent Unit) is simpler than LSTM with fewer parameters. Uses update and reset gates. Often performs similarly to LSTM but trains faster. Good alternative when computational resources are limited.
+
+39. What is attention mechanism?
+Attention allows models to focus on relevant parts of input when making predictions. Computes weighted sum of input representations. Key innovation in Transformers. Enables better handling of long sequences.
+
+40. Explain Transformer architecture.
+Transformers use self-attention to process sequences in parallel (unlike RNNs). Consist of encoder-decoder with multi-head attention and feed-forward layers. Foundation of modern NLP models (BERT, GPT). Highly parallelizable.
+
+41. What is BERT?
+BERT (Bidirectional Encoder Representations from Transformers) is pre-trained on masked language modeling and next sentence prediction. Bidirectional context understanding. Fine-tuned for various NLP tasks. Revolutionized NLP.
+
+42. Explain GPT models.
+GPT (Generative Pre-trained Transformer) uses decoder-only architecture trained on next token prediction. Unidirectional (left-to-right). Excellent for text generation. GPT-3/4 show impressive few-shot learning capabilities.
+
+43. What is word embedding?
+Word embeddings represent words as dense vectors capturing semantic meaning. Words with similar meanings have similar vectors. Examples: Word2Vec, GloVe, FastText. Enable neural networks to process text effectively.
+
+44. Explain Word2Vec.
+Word2Vec learns word embeddings using shallow neural networks. Two architectures: CBOW (predicts word from context) and Skip-gram (predicts context from word). Captures semantic relationships (king - man + woman ≈ queen).
+
+45. What is batch normalization?
+Batch normalization normalizes layer inputs across mini-batch. Reduces internal covariate shift, allows higher learning rates, acts as regularization. Applied before or after activation. Improves training stability and speed.
+
+46. Explain dropout.
+Dropout randomly sets fraction of neurons to zero during training. Prevents co-adaptation of neurons, acts as ensemble of networks. Regularization technique that reduces overfitting. Typically use 0.2-0.5 dropout rate.
+
+47. What is data augmentation?
+Data augmentation artificially increases training data by applying transformations. Images: rotation, flipping, cropping, color jittering. Text: synonym replacement, back-translation. Improves generalization and reduces overfitting.
+
+48. Explain learning rate scheduling.
+Learning rate scheduling adjusts learning rate during training. Methods: step decay, exponential decay, cosine annealing, warm restarts. Helps escape local minima and achieve better convergence.
+
+49. What is Adam optimizer?
+Adam (Adaptive Moment Estimation) combines momentum and RMSprop. Maintains adaptive learning rates for each parameter. Computationally efficient, requires little tuning. Most popular optimizer for deep learning.
+
+50. Explain momentum in optimization.
+Momentum accelerates gradient descent by accumulating velocity in consistent directions. Helps overcome local minima and speeds up convergence. Typical momentum value: 0.9. Reduces oscillations in optimization.
+
+51. What is early stopping?
+Early stopping halts training when validation performance stops improving. Prevents overfitting by finding optimal number of epochs. Monitor validation loss/accuracy, stop if no improvement for n epochs (patience).
+
+52. Explain hyperparameter tuning.
+Hyperparameter tuning finds optimal model configuration. Methods: grid search (exhaustive), random search (sample randomly), Bayesian optimization (model-based), hyperband (adaptive). Use cross-validation to evaluate.
+
+53. What is the vanishing gradient problem?
+In deep networks, gradients become extremely small during backpropagation, making early layers learn very slowly. Caused by repeated multiplication of small values. Solutions: ReLU activation, batch normalization, residual connections, LSTM.
+
+54. Explain exploding gradient problem.
+Gradients become extremely large during backpropagation, causing unstable training. Solutions: gradient clipping (cap gradient magnitude), proper weight initialization, batch normalization, lower learning rate.
+
+55. What is ResNet?
+ResNet (Residual Network) uses skip connections that bypass layers. Enables training very deep networks (100+ layers) by solving vanishing gradient problem. Skip connections allow gradients to flow directly through network.
+
+56. Explain inception modules.
+Inception modules apply multiple filter sizes in parallel and concatenate results. Captures features at different scales. Used in GoogLeNet/Inception networks. Reduces parameters while maintaining expressiveness.
+
+57. What is object detection?
+Object detection locates and classifies multiple objects in images. Outputs bounding boxes and class labels. Algorithms: R-CNN, Fast R-CNN, Faster R-CNN, YOLO, SSD. Combines classification and localization.
+
+58. Explain YOLO algorithm.
+YOLO (You Only Look Once) performs object detection in single forward pass. Divides image into grid, predicts bounding boxes and class probabilities for each cell. Fast, real-time detection. Trade-off: speed vs accuracy.
+
+59. What is semantic segmentation?
+Semantic segmentation assigns class label to each pixel in image. All instances of same class get same label. Architectures: FCN, U-Net, DeepLab. Used in medical imaging, autonomous driving, satellite imagery.
+
+60. Explain instance segmentation.
+Instance segmentation identifies and segments individual object instances. Combines object detection and semantic segmentation. Different instances of same class get different labels. Algorithms: Mask R-CNN, YOLACT.
+
+61. What is generative adversarial network (GAN)?
+GAN consists of generator (creates fake data) and discriminator (distinguishes real from fake). Trained adversarially - generator tries to fool discriminator. Used for image generation, style transfer, data augmentation.
+
+62. Explain variational autoencoder (VAE).
+VAE is generative model that learns latent distribution of data. Encoder maps input to distribution parameters, decoder generates from sampled latent vector. Enables controlled generation and interpolation in latent space.
+
+63. What is reinforcement learning?
+RL trains agents to make sequential decisions by interacting with environment. Agent receives rewards/penalties for actions. Goal: learn policy maximizing cumulative reward. Components: state, action, reward, policy, value function.
+
+64. Explain Q-learning.
+Q-learning is model-free RL algorithm learning action-value function Q(s,a). Updates Q-values using Bellman equation. Off-policy: learns optimal policy while following different policy. Converges to optimal policy with sufficient exploration.
+
+65. What is deep Q-network (DQN)?
+DQN combines Q-learning with deep neural networks to handle high-dimensional state spaces. Uses experience replay and target network for stability. Breakthrough in applying deep learning to RL. Achieved human-level performance on Atari games.
+
+66. Explain policy gradient methods.
+Policy gradient methods directly optimize policy by gradient ascent on expected reward. REINFORCE algorithm uses Monte Carlo sampling. Advantage: can learn stochastic policies, handles continuous actions. Disadvantage: high variance.
+
+67. What is actor-critic?
+Actor-critic combines value-based and policy-based methods. Actor (policy) selects actions, critic (value function) evaluates them. Reduces variance of policy gradients. Examples: A3C, A2C, PPO, SAC.
+
+68. Explain imbalanced datasets.
+Imbalanced datasets have unequal class distribution. Majority class dominates, minority class underrepresented. Solutions: resampling (over/under-sampling), SMOTE, class weights, ensemble methods, anomaly detection approaches.
+
+69. What is SMOTE?
+SMOTE (Synthetic Minority Over-sampling Technique) generates synthetic samples for minority class. Creates new samples by interpolating between existing minority samples. Helps balance dataset without simply duplicating samples.
+
+70. Explain one-hot encoding.
+One-hot encoding converts categorical variables into binary vectors. Each category becomes a column with 1 for presence, 0 for absence. Prevents ordinal relationships in categorical data. Can lead to high dimensionality.
+
+71. What is label encoding?
+Label encoding assigns integer to each category. Simple, memory efficient. Problem: introduces ordinal relationship where none exists. Use only for ordinal data or tree-based models that handle it well.
+
+72. Explain feature scaling.
+Feature scaling normalizes feature ranges for algorithms sensitive to scale. Methods: Min-Max scaling (0-1 range), Standardization (mean=0, std=1), Robust scaling (uses median, IQR). Important for gradient descent, distance-based algorithms.
+
+73. What is feature selection?
+Feature selection identifies most relevant features, removing irrelevant/redundant ones. Methods: filter (statistical tests), wrapper (model-based), embedded (during training). Benefits: reduces overfitting, improves interpretability, faster training.
+
+74. Explain time series forecasting.
+Time series forecasting predicts future values based on historical data. Methods: ARIMA, exponential smoothing, Prophet, LSTM, Transformer. Challenges: trend, seasonality, non-stationarity, missing values.
+
+75. What is ARIMA?
+ARIMA (AutoRegressive Integrated Moving Average) models time series using past values and errors. AR: regression on past values, I: differencing for stationarity, MA: regression on past errors. Parameters: (p,d,q).
+
+76. Explain anomaly detection.
+Anomaly detection identifies unusual patterns deviating from normal behavior. Methods: statistical (z-score, IQR), isolation forest, one-class SVM, autoencoders. Applications: fraud detection, network security, quality control.
+
+77. What is isolation forest?
+Isolation forest detects anomalies by isolating observations. Anomalies are easier to isolate (fewer splits needed). Builds ensemble of random trees. Efficient, handles high dimensions, no distance calculations needed.
+
+78. Explain recommendation systems.
+Recommendation systems suggest items to users. Approaches: collaborative filtering (user-item interactions), content-based (item features), hybrid. Techniques: matrix factorization, neural collaborative filtering, deep learning.
+
+79. What is collaborative filtering?
+Collaborative filtering recommends based on user-item interaction patterns. User-based: find similar users, recommend their items. Item-based: find similar items, recommend to users. Doesn't need item features.
+
+80. Explain matrix factorization.
+Matrix factorization decomposes user-item matrix into lower-dimensional user and item matrices. Captures latent factors. SVD, NMF are common techniques. Used in Netflix Prize. Handles sparsity, scalable.
+
+81. What is A/B testing in ML?
+A/B testing compares two model versions by randomly assigning users to each. Measures statistical significance of performance difference. Important for validating model improvements in production. Requires sufficient sample size.
+
+82. Explain model deployment.
+Model deployment makes trained models available for predictions in production. Considerations: serving infrastructure, latency requirements, scalability, monitoring, versioning, rollback capability. Tools: TensorFlow Serving, TorchServe, MLflow.
+
+83. What is model monitoring?
+Model monitoring tracks model performance in production. Monitors: prediction accuracy, data drift, concept drift, latency, errors. Alerts when performance degrades. Essential for maintaining model reliability.
+
+84. Explain data drift.
+Data drift occurs when input data distribution changes over time. Model trained on old distribution may perform poorly. Detection: statistical tests, monitoring feature distributions. Solution: retrain model on recent data.
+
+85. What is concept drift?
+Concept drift occurs when relationship between features and target changes. Model's learned patterns become outdated. Types: sudden, gradual, recurring. Requires model retraining or online learning.
+
+86. Explain online learning.
+Online learning updates model incrementally as new data arrives. Adapts to changing patterns without full retraining. Useful for streaming data, concept drift. Algorithms: SGD, online gradient descent, incremental learning.
+
+87. What is federated learning?
+Federated learning trains models across decentralized devices without centralizing data. Preserves privacy, reduces communication costs. Challenges: non-IID data, communication efficiency, security. Used in mobile keyboards, healthcare.
+
+88. Explain meta-learning.
+Meta-learning (learning to learn) trains models to quickly adapt to new tasks with few examples. Few-shot learning, zero-shot learning. Approaches: MAML, prototypical networks, matching networks. Useful when labeled data is scarce.
+
+89. What is few-shot learning?
+Few-shot learning trains models to recognize new classes from very few examples (1-5 samples). Uses meta-learning or transfer learning. Applications: rare disease diagnosis, new product categorization, personalization.
+
+90. Explain zero-shot learning.
+Zero-shot learning recognizes classes never seen during training. Uses semantic information (attributes, descriptions) to bridge seen and unseen classes. Enables generalization to new categories without examples.
+
+91. What is active learning?
+Active learning selectively queries most informative samples for labeling. Reduces labeling cost by focusing on uncertain or diverse samples. Strategies: uncertainty sampling, query-by-committee, expected model change.
+
+92. Explain semi-supervised learning.
+Semi-supervised learning uses both labeled and unlabeled data. Unlabeled data helps learn data structure. Methods: self-training, co-training, graph-based methods. Useful when labeling is expensive.
+
+93. What is self-supervised learning?
+Self-supervised learning creates supervision signal from data itself. Pretext tasks: predicting masked words, image rotation, contrastive learning. Learns useful representations without manual labels. Foundation of modern pre-training.
+
+94. Explain contrastive learning.
+Contrastive learning learns representations by pulling similar samples together and pushing dissimilar samples apart. Creates positive pairs (augmented versions) and negative pairs. Methods: SimCLR, MoCo. Effective for self-supervised learning.
+
+95. What is knowledge distillation?
+Knowledge distillation transfers knowledge from large teacher model to smaller student model. Student learns from teacher's soft predictions (probabilities). Produces compact models maintaining performance. Useful for deployment.
+
+96. Explain neural architecture search (NAS).
+NAS automatically discovers optimal neural network architectures. Search space: possible architectures, search strategy: how to explore, performance estimation: evaluate candidates. Computationally expensive but finds state-of-the-art architectures.
+
+97. What is pruning in neural networks?
+Pruning removes unnecessary weights or neurons to compress models. Types: magnitude-based, structured/unstructured. Reduces model size and inference time with minimal accuracy loss. Important for edge deployment.
+
+98. Explain quantization.
+Quantization reduces numerical precision of weights and activations (e.g., float32 to int8). Decreases model size and speeds up inference. Types: post-training quantization, quantization-aware training. Trade-off: compression vs accuracy.
+
+99. What is model interpretability?
+Model interpretability explains how models make predictions. Techniques: LIME, SHAP, attention visualization, saliency maps, feature importance. Important for trust, debugging, regulatory compliance, fairness.
+
+100. Explain SHAP values.
+SHAP (SHapley Additive exPlanations) assigns each feature an importance value for a prediction. Based on game theory. Provides consistent, locally accurate explanations. Works for any model. Helps understand individual predictions.
+
+101. What is fairness in machine learning?
+Fairness ensures models don't discriminate against protected groups. Metrics: demographic parity, equalized odds, equal opportunity. Techniques: pre-processing (data balancing), in-processing (fairness constraints), post-processing (threshold adjustment).
+
+102. Explain bias in ML models.
+Bias in ML can arise from biased training data, feature selection, or algorithm design. Types: historical bias, representation bias, measurement bias. Mitigation: diverse data, fairness metrics, bias audits, adversarial debiasing.
+
+103. What is model versioning?
+Model versioning tracks different versions of models over time. Includes code, data, hyperparameters, metrics. Enables reproducibility, rollback, comparison. Tools: MLflow, DVC, Weights & Biases. Essential for ML operations.
+
+104. Explain MLOps.
+MLOps applies DevOps principles to machine learning. Automates model training, testing, deployment, monitoring. Includes CI/CD for ML, experiment tracking, model registry, feature stores. Bridges gap between development and production.
+
+105. What is a feature store?
+Feature store is centralized repository for storing, managing, and serving features. Ensures consistency between training and serving. Enables feature reuse, versioning, monitoring. Examples: Feast, Tecton, AWS Feature Store.
+
+106. Explain model ensembling strategies.
+Ensembling combines multiple models for better predictions. Strategies: averaging, weighted averaging, stacking (meta-model), blending. Reduces variance, improves robustness. Trade-off: increased complexity and computation.
+
+107. What is curriculum learning?
+Curriculum learning trains models on progressively harder examples. Starts with easy samples, gradually increases difficulty. Mimics human learning. Can improve convergence speed and final performance. Useful for complex tasks.
+
+108. Explain multi-task learning.
+Multi-task learning trains single model on multiple related tasks simultaneously. Shares representations across tasks. Benefits: improved generalization, reduced overfitting, knowledge transfer. Challenges: task balancing, negative transfer.
+
+109. What is domain adaptation?
+Domain adaptation transfers knowledge from source domain to different target domain. Addresses distribution shift between training and deployment. Techniques: feature alignment, adversarial training, self-training. Important for real-world deployment.
+
+110. Explain catastrophic forgetting.
+Catastrophic forgetting occurs when neural networks forget previously learned information upon learning new tasks. Problem in continual learning. Solutions: elastic weight consolidation, progressive neural networks, memory replay, knowledge distillation.
